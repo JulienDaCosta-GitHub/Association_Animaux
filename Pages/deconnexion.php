@@ -1,7 +1,10 @@
-<?php include "header.php"; ?>
-
-<body>
-    
-</body>
-
-<?php include "footer.php"; ?>
+<?php
+//logout code
+session_start();
+    if(isset($_GET['logout']))
+    {
+        session_destroy();
+        header("location:connexion.php");
+    }
+ 
+?>
