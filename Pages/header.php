@@ -34,10 +34,10 @@
         <a class="nav-link" href="panier.php">Panier</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">autre rubrique</a>
+        <a class="nav-link" href="remerciement.php">Remerciements</a>
       </li>
     </ul>
   
   </div>
   </nav>
-</head>
+</head><br>
