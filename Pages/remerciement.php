@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php include "header.php"; ?>
+
 <body>
-    
+
+    <h1 class="center-text" style="font-size:60px">Les amis des animaux vous <u>remercie</u></h1><br><br>
+
+        <img class="center" src="IMG/merci.jpg"><br><br>
+
+    <h3 class="center-text" style="font-size:30px"><u>Les amis des animaux vous remercie pour votre don.</u> Il va servir à financer de nombreuses choses choses comme</h3>
+
 </body>
-</html>
+
+<?php include "footer.php"; ?>
