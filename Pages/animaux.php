@@ -41,6 +41,7 @@
         <p>Age: ' . $animal["age"] . ' ans</p>
         <p>Taille: ' . $animal["taille"] . ' cm</p>
         <p>Poids: ' . $animal["poids"] . ' Kg</p>
+        <button type="button" class="btn btn-primary">Réserver</button>
       </div>
     </div>';
 }

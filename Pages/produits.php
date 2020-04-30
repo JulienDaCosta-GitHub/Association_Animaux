@@ -39,6 +39,7 @@
         <p>Type: ' . $produit["type_animal"] . '</p>
         <p>Prix: ' . $produit["prix"] . '€</p>
         <p>Stock: ' . $produit["stock"] . ' unités</p>
+        <button type="button" class="btn btn-primary">Acheter</button>
       </div>
     </div>';
 }
