@@ -10,11 +10,13 @@
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand fa fa-home" href="accueil.php"></a>
+  <a class="navbar-brand" href="accueil.php"><i class="fa fa-home"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
+
+    <div>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="accueil.php">Accueil<span class="sr-only">(current)</span></a>
@@ -22,11 +24,16 @@
       <li class="nav-item active">
         <a class="nav-link" href="animaux.php">Les animaux</span></a>
       </li>
+    </ul>
+    </div>
+
+    <div class="ml-auto">
+    <ul class="navbar-nav ">
       <li class="nav-item active">
         <a class="nav-link" href="inscription.php">Inscription</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="connexion.php">Connexion</a>
+        <a class="nav-link nav" href="connexion.php">Connexion</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="deconnexion.php">Déconnexion</a>
@@ -34,8 +41,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="remerciement.php">Remerciements</a>
       </li>
-      <a class="nav-link fa fa-shopping-basket panier active" href="panier.php"></a>
+      <a class="nav-link active" href="panier.php"><i class="fa fa-shopping-basket"></i></a>
     </ul>
+    </div>
     
   
   </div>

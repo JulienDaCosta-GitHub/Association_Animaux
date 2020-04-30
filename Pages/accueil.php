@@ -1,7 +1,8 @@
 <?php include "header.php"; ?>
 
 <body>
-    
+
+<h1 class="center-text" style="font-size:60px"><u>Les amis des animaux</u></h1><br>
     <!-- carousel -->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -38,10 +39,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div><br>
-    
-    <h1 class="center-text" style="font-size:60px"><u>Les amis des animaux</u></h1><br><br>
 
-    <h3 class="center-text" style="font-size:30px"><u>Les amis des animaux</u> est une association qui vient en aide aux animaux laissés à l'abandon ou qui</h3>
+    <h3 class="center-text" style="font-size:30px"><u>Les amis des animaux</u> est une association qui vient en aide aux animaux<br> dont les propriétaires n'ont plus les moyens d'assurer leur bien-être,<br> qui sont laissés à l'abandon ou qui étaient maltraités.</h3>
 
 </body>
 
