@@ -28,17 +28,19 @@ $resulte = $crud->getData($quer);
 
 <body>
 <header>
-    <?php
-    require_once('../../Pages/header.php') ;
 
-    ?>
+    <?php require_once('../../Pages/header.php');?>
+
+
 </header>
 
 <!-- DIV CONTAINER ANIMAUX  ________________________-->
 <div class="container  mt-3">
     <h3 class="text-center mt-4 mb-4">Animaux</h3>
     <div class="row ">
-        <table class="table table-striped table-bordered">
+
+        <table class="table ">
+
             <thead>
             <tr>
                 <th>Nom</th>
@@ -65,12 +67,16 @@ $resulte = $crud->getData($quer);
         echo "<td>".$res['taille']."</td>";
         echo "<td>".$res['poids']."</td>";
         echo "<td>".$res['age']."</td>";
-        echo "<td><a href=\"Animaux/edit.php?id=$res[ID]\">Edit</a> | <a href=\"../Data/Animaux/delete.php?id=$res[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+
+        echo "<td><a href=\"Animaux/edit.php?id=$res[ID]\"><button class=\"btn btn-primary\">Modifier</button></a> <a href=\"../Data/Animaux/delete.php?id=$res[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button class=\"btn btn-danger\">Supprimer</button></a></td>";
+
     }
     ?>
     </tbody>
 </table>
-        <a href="Animaux/Add.php"><button type="button" class="btn btn-outline-success">Ajouter</button></a>
+
+        <a href="Animaux/Add.php"><button type="button" class="btn btn-dark">Ajouter</button></a>
+
 
 </div>
 
@@ -79,7 +85,9 @@ $resulte = $crud->getData($quer);
     <div class="container  mt-3">
         <h3 class="text-center mt-4 mb-4">Produits</h3>
         <div class="row ">
-            <table class="table table-striped table-bordered">
+
+            <table class="table">
+
                 <thead>
                 <tr>
                     <th>Nom</th>
@@ -102,12 +110,16 @@ $resulte = $crud->getData($quer);
                     echo "<td>".$re['type_animal']."</td>";
                     echo "<td>".$re['prix']."</td>";
                     echo "<td>".$re['stock']."</td>";
-                    echo "<td><a href=\"Produits/edit.php?id=$re[ID]\">Edit</a> | <a href=\"../Data/Produits/delete.php?id=$re[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+
+                    echo "<td><a href=\"Produits/edit.php?id=$re[ID]\"><button class=\"btn btn-primary\">Modifier</button></a> <a href=\"../Data/Produits/delete.php?id=$re[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button class=\"btn btn-danger\">Supprimer</button></a></td>";
+
                 }
                 ?>
                 </tbody>
             </table>
-            <a href="Produits/Add.php"><button type="button" class="btn btn-outline-success">Ajouter</button></a>
+
+
+            <a href="Produits/Add.php"><button type="button" class="btn btn-dark">Ajouter</button></a>
 
         </div>
 

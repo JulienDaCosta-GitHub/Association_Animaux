@@ -36,10 +36,10 @@ $resulte = $crud->getData($quer);
 </head>
 <body>
 <header>
-    <?php
-    require_once('../../../Pages/header.php') ;
 
-    ?>
+    <?php require_once('../../../Pages/header.php');?>
+
+
 </header>
 <a href="index.php">Home</a>
 <br/><br/>
