@@ -37,9 +37,16 @@
   margin: 10px;
 }
 
-.img_animal {
+.cadre {
+  height: 150px;
+  width: auto;
+  text-align: center;
+}
+
+.img_card {
   border-radius: 5px 5px 0 0;
-  width: 245px;
+  height: 100%;
+  width: auto;
 }
 
 .title_card {

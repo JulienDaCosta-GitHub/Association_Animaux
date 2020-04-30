@@ -32,7 +32,7 @@
 <?php
   foreach  ($animals as $animal) {
       echo '<div class="card">
-      <img class="img_animal" src="IMG/' . $animal["img"] . '" alt="Avatar">
+      <div class="cadre"><img class="img_card" src="IMG/' . $animal["image"] . '" alt="Avatar"></div>
       <div class="card_container">
     
         <h4 class="title_card"><b>' . $animal["nom"] . '</b></h4>
