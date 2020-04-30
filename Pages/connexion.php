@@ -38,13 +38,11 @@ session_start();
 
 <!doctype html>
 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
 
   <title>form</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
   <link rel="stylesheet" href="CSS/login_inscription.css">
 
 

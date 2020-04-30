@@ -1,12 +1,10 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
 
   <title>form</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
   <link rel="stylesheet" href="CSS/login_inscription.css">
 
 
@@ -19,7 +17,7 @@
 
 //connexion bdd
 try{
-    $bdd= new PDO('mysql:host=localhost;port=3308;dbname=association_animaux;charsert=utf8','root','');
+    $bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
 }
@@ -87,21 +85,21 @@ if(isset($_POST['inscription'])){
             <span class="input-item">
                <i class="fa fa-home"></i>
             </span>
-            <input class="form-input" id="txt-input" type="text"  name="cp" placeholder="votre code postale" required>
+            <input class="form-input" id="txt-input" type="number"  name="cp" placeholder="votre code postale" required minlength="5" maxlength="5">
             <br>
 
              <!--user mail -->
             <span class="input-item">
                <i class="fa fa-at"></i>
             </span>
-            <input class="form-input" id="txt-input" type="email"  name="mail" placeholder="votre email" required>
+            <input class="form-input" id="txt-input" type="email"  name="mail" placeholder="votre email gmail" required pattern=".+@gmail.com">
             <br>
 
             <!--user telephone -->
             <span class="input-item">
                <i class="fa fa-phone"></i>
             </span>
-            <input class="form-input" id="txt-input" type="tel"  name="telephone" placeholder="telephone" required>
+            <input class="form-input" id="txt-input" type="tel"  name="telephone" placeholder="telephone" required  pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$">
             <br>
             <!--user mdp-->
     
@@ -119,7 +117,7 @@ if(isset($_POST['inscription'])){
                   <!--buttons -->
                   <!--button inscription -->
 
-                        <button class="log-in"  type="submit" name="inscription"> s'inscrire </button>
+                        <button class="log-in"  type="submit" name="inscription">s'inscrire</button>
                      </div>
                
                   <!--  autres buttons -->
@@ -144,4 +142,5 @@ if(isset($_POST['inscription'])){
 
 
 </html>
+
 
