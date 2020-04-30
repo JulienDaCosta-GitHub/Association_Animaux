@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a50cce6-d610-4871-a1e6-36d1a2d689ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Animaux/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Animaux/Add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Animaux/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Animaux/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Produits/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Produits/Add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Produits/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Produits/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/CSS/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/animaux.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/animaux.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,7 +65,7 @@
       <workItem from="1588204822491" duration="125000" />
       <workItem from="1588208561915" duration="4375000" />
       <workItem from="1588214682208" duration="764000" />
-      <workItem from="1588238217833" duration="5645000" />
+      <workItem from="1588238217833" duration="6314000" />
     </task>
     <servers />
   </component>
