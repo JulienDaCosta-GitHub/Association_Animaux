@@ -1,8 +1,10 @@
-<?php 
+
+<?php
 //connexion bdd
 
-  $con=mysqli_connect('localhost','root','','association_animaux');
- 
+$con = mysqli_connect('localhost', 'root', 'root');
+mysqli_select_db($con, 'association_animaux');
+
   if(!$con)
   {
       die(' Please Check Your Connection'.mysqli_error($con));
