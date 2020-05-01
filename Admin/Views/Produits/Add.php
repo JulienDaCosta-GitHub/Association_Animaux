@@ -40,7 +40,7 @@ $result = $crud->getData($query);
             </p>
 
 
-            <input class="form-control mb-4" type="text" name="nom">
+            <input class="form-control mb-4" type="text" name="nom" placeholder="Nom">
 
 
             <select class="mdb-select form-control mb-4" name="type_animal">
@@ -55,9 +55,9 @@ $result = $crud->getData($query);
                 ?>
             </select>
 
-            <input class="form-control mb-4" type="text" name="prix">
+            <input class="form-control mb-4" type="text" name="prix" placeholder="Prix">
 
-            <input class="form-control mb-4" type="text" name="stock">
+            <input class="form-control mb-4" type="text" name="stock" placeholder="Stock">
 
             <!-- Input file -->
             <input class="form-control-file" id="exampleFormControlFile1" type="file" name="file" size="30">
