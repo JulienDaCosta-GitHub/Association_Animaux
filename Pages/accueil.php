@@ -3,8 +3,8 @@
 <body>
 
 <h1 class="center-text" style="font-size:60px"><u>Les amis des animaux</u></h1><br>
-    <!-- carousel -->
 
+    <!-- carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
