@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php include "header.php"; ?>
+
 <body>
     
+<h1 class="center-text" style="font-size:60px"><u>Voici tous nos produits.</u></h1><br><br>
+<h3 class="center-text" style="font-size:30px">Parce que vos animaux le mérite bien !<br><br></h3>
+
 </body>
-</html>
+
+<?php include "footer.php"; ?>
