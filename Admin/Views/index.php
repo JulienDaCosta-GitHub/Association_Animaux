@@ -27,19 +27,16 @@ $resulte = $crud->getData($quer);
 
 
 <body>
-<header>
-    <?php
-    require_once('../../Pages/header.php')
-    ?>
-</header>
 
 <!-- DIV CONTAINER ANIMAUX  ________________________-->
 <div class="container  mt-3">
     <h3 class="text-center mt-4 mb-4">Animaux</h3>
     <div class="row ">
-        <table class="table">
+        <table class="table table-striped table-bordered">
             <thead>
             <tr>
+                <th>Image</th>
+
                 <th>Nom</th>
                 <th>Type</th>
                 <th>Race</th>
@@ -53,34 +50,38 @@ $resulte = $crud->getData($quer);
 
             </tr>
             </thead>
-    <tbody>
-    <?php
-    foreach ($result as $key => $res) {
-        //while($res = mysqli_fetch_array($result)) {
-        echo "<tr>";
-        echo "<td>".$res['nom']."</td>";
-        echo "<td>".$res['type']."</td>";
-        echo "<td>".$res['race']."</td>";
-        echo "<td>".$res['taille']."</td>";
-        echo "<td>".$res['poids']."</td>";
-        echo "<td>".$res['age']."</td>";
-        echo "<td><a href=\"Animaux/edit.php?id=$res[ID]\"><button class=\"btn btn-dark\">Modifier</button></a> <a href=\"../Data/Animaux/delete.php?id=$res[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button class=\"btn btn-dark\">Supprimer</button></a></td>";
-    }
-    ?>
-    </tbody>
-</table>
+            <tbody>
+            <?php
+            foreach ($result as $key => $res) {
+                //while($res = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td class='w-25'> <img class='w-50' src='../miniature/".$res['chemin']."'/></td>";
+
+                echo "<td>".$res['nom']."</td>";
+                echo "<td>".$res['type']."</td>";
+                echo "<td>".$res['race']."</td>";
+                echo "<td>".$res['taille']."</td>";
+                echo "<td>".$res['poids']."</td>";
+                echo "<td>".$res['age']."</td>";
+                echo "<td><a href=\"Animaux/edit.php?id=$res[ID]\"><button class='btn btn-dark'>Modifier</button></a> <a href=\"../Data/Animaux/delete.php?id=$res[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button class='btn btn-dark'>Supprimer</button></a></td>";
+            }
+            ?>
+            </tbody>
+        </table>
         <a href="Animaux/Add.php"><button type="button" class="btn btn-outline-success">Ajouter</button></a>
 
-</div>
+    </div>
 
     <!-- _____________________DIV CONTAINER PRODUITS ------------>
 
     <div class="container  mt-3">
         <h3 class="text-center mt-4 mb-4">Produits</h3>
         <div class="row ">
-            <table class="table ">
+            <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
+                    <th>Image</th>
+
                     <th>Nom</th>
                     <th>Type</th>
                     <th>Prix</th>
@@ -97,11 +98,12 @@ $resulte = $crud->getData($quer);
                 foreach ($resulte as $key => $re) {
                     //while($res = mysqli_fetch_array($result)) {
                     echo "<tr>";
+                    echo "<td class='w-25'> <img class='w-50' src='../miniature/".$re['chemin']."'/></td>";
                     echo "<td>".$re['nom']."</td>";
                     echo "<td>".$re['type_animal']."</td>";
                     echo "<td>".$re['prix']."</td>";
                     echo "<td>".$re['stock']."</td>";
-                    echo "<td><a href=\"Produits/edit.php?id=$re[ID]\"><button class=\"btn btn-dark\">Modifier</button></a> <a href=\"../Data/Produits/delete.php?id=$re[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button class=\"btn btn-dark\">Supprimer</button></a></td>";
+                    echo "<td><a href=\"Produits/edit.php?id=$re[ID]\"><button class='btn btn-dark'>Modifier</button></a> <a href=\"../Data/Produits/delete.php?id=$re[ID]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button class='btn btn-dark'>Supprimmer</button></a></td>";
                 }
                 ?>
                 </tbody>
