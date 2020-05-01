@@ -130,7 +130,7 @@ if(isset($_POST['Submit'])) {
         // if all the fields are filled (not empty)
 
         //insert data to database
-        $result = $crud->execute("INSERT INTO produit(nom,type_animal,prix,stock,chemin) VALUES('$nom','$type_animal','$prix', '$stock','$filename')");
+        $result = $crud->execute("INSERT INTO produit(nom,type_animal,prix,stock,image) VALUES('$nom','$type_animal','$prix', '$stock','$filename')");
 
 
         //display success message

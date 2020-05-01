@@ -125,7 +125,7 @@ if(isset($_POST['update']))
 
     else {
         //updating the table
-        $result = $crud->execute("UPDATE animal SET nom='$nom',type='$type',race='$race', taille='$taille',poids='$poids',age='$age', chemin='$filename' WHERE id=$id");
+        $result = $crud->execute("UPDATE animal SET nom='$nom',type='$type',race='$race', taille='$taille',poids='$poids',age='$age', image='$filename' WHERE id=$id");
 
 
         //redirectig to the display page. In our case, it is index.php

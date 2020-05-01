@@ -15,7 +15,7 @@ foreach ($result as $res) {
     $type_animal = $res['type_animal'];
     $prix = $res['prix'];
     $stock = $res['stock'];
-    $filename = $res['chemin'];
+    $filename = $res['image'];
 
 }
 

@@ -131,7 +131,7 @@ if(isset($_POST['Submit'])) {
         // if all the fields are filled (not empty)
 
         //insert data to database
-        $result = $crud->execute("INSERT INTO animal(nom,type,race,taille,poids,age,chemin) VALUES('$nom','$type','$race', '$taille', '$poids', '$age', '$filename')");
+        $result = $crud->execute("INSERT INTO animal(nom,type,race,taille,poids,age,image) VALUES('$nom','$type','$race', '$taille', '$poids', '$age', '$filename')");
 
         //display success message
         header("Location: ../../Views/index.php");

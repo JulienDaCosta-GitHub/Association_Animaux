@@ -124,7 +124,7 @@ if(isset($_POST['update']))
         echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
     }  else {
         //updating the table
-        $result = $crud->execute("UPDATE produit SET nom='$nom',type_animal='$type_animal',prix='$prix', stock='$stock', chemin='$filename' WHERE id=$id");
+        $result = $crud->execute("UPDATE produit SET nom='$nom',type_animal='$type_animal',prix='$prix', stock='$stock', image='$filename' WHERE id=$id");
 
         //redirectig to the display page. In our case, it is index.php
         header("Location: ../../Views/index.php");

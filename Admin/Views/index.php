@@ -55,7 +55,7 @@ $resulte = $crud->getData($quer);
             foreach ($result as $key => $res) {
                 //while($res = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td class='w-25'> <img class='w-50' src='../miniature/".$res['chemin']."'/></td>";
+                echo "<td class='w-25'> <img class='w-50' src='../miniature/".$res['image']."'/></td>";
 
                 echo "<td>".$res['nom']."</td>";
                 echo "<td>".$res['type']."</td>";
@@ -98,7 +98,7 @@ $resulte = $crud->getData($quer);
                 foreach ($resulte as $key => $re) {
                     //while($res = mysqli_fetch_array($result)) {
                     echo "<tr>";
-                    echo "<td class='w-25'> <img class='w-50' src='../miniature/".$re['chemin']."'/></td>";
+                    echo "<td class='w-25'> <img class='w-50' src='../miniature/".$re['image']."'/></td>";
                     echo "<td>".$re['nom']."</td>";
                     echo "<td>".$re['type_animal']."</td>";
                     echo "<td>".$re['prix']."</td>";

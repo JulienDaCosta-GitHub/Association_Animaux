@@ -18,7 +18,7 @@ foreach ($result as $res) {
     $taille = $res['taille'];
     $poids = $res['poids'];
     $age = $res['age'];
-    $filename = $res['chemin'];
+    $filename = $res['image'];
 }
 ?>
 <!doctype html>
