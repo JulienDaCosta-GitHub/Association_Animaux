@@ -15,6 +15,7 @@ foreach ($result as $res) {
     $type_animal = $res['type_animal'];
     $prix = $res['prix'];
     $stock = $res['stock'];
+    $filename = $res['chemin'];
 
 }
 
@@ -40,40 +41,44 @@ $resulte = $crud->getData($quer);
 
 <div class="row col-sm-6">
 
-        <form class="text-center border border-light p-5" name="form1" method="post" action="../../Data/Produits/edit.php">
-            <p class="h4 mb-4">Modifier</p>
+    <form class="text-center border border-light p-5" name="form1" method="post" action="../../Data/Produits/edit.php" enctype="multipart/form-data">
+        <p class="h4 mb-4">Modifier</p>
 
-            <p>Join our mailing list. We write rarely, but only the best content.</p>
+        <p>Join our mailing list. We write rarely, but only the best content.</p>
 
-            <p>
-                <a href="" target="_blank">See the last newsletter</a>
-            </p>
+        <p>
+            <a href="" target="_blank">See the last newsletter</a>
+        </p>
 
-                   <input id="defaultSubscriptionFormPassword" class="form-control mb-4" type="text" name="nom" value="<?php echo $nom;?>">
+        <input id="defaultSubscriptionFormPassword" class="form-control mb-4" type="text" name="nom" value="<?php echo $nom;?>">
 
-                <select class="mdb-select form-control mb-4" class="form-control mb-4" name="type_animal">
-                    <option value="" disabled>Veuillez choisir un type</option>
+        <select class="mdb-select form-control mb-4" class="form-control mb-4" name="type_animal">
+            <option value="" disabled>Veuillez choisir un type</option>
 
-                    <?php
-                    foreach ($resulte as $key => $res) {
+            <?php
+            foreach ($resulte as $key => $res) {
 
-                        echo "<option value=\"1\"  selected>".$res['type']."</option>";
+                echo "<option value=\"1\"  selected>".$res['type']."</option>";
 
-                    }
-                    ?>
-                </select>
-
-
-                  <input id="defaultSubscriptionFormPassword" class="form-control mb-4" type="text" name="prix" value="<?php echo $prix;?>">
+            }
+            ?>
+        </select>
 
 
-                    <input id="defaultSubscriptionFormPassword" class="form-control mb-4" type="text" name="stock" value="<?php echo $stock;?>">
+        <input id="defaultSubscriptionFormPassword" class="form-control mb-4" type="text" name="prix" value="<?php echo $prix;?>">
 
 
-                    <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
-                    <input class="btn btn-info btn-block" type="submit" name="update" value="Update">
+        <input id="defaultSubscriptionFormPassword" class="form-control mb-4" type="text" name="stock" value="<?php echo $stock;?>">
 
-        </form>
+        <!-- INPUT FILES-->
+        <input class="form-control-file" id="exampleFormControlFile1" type="file" name="file" size="30" value="<?php echo $filename?>">
+
+
+
+        <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+        <input class="btn btn-info btn-block" type="submit" name="update" value="Update">
+
+    </form>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

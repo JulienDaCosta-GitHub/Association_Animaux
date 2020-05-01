@@ -29,7 +29,7 @@ $result = $crud->getData($query);
 
     <div class="row">
 
-        <form class="text-center border border-light p-5" action="../../Data/Produits/Add.php" method="post" name="form1">
+        <form class="text-center border border-light p-5" action="../../Data/Produits/Add.php" method="post" name="form1" enctype="multipart/form-data">
 
             <p class="h4 mb-4">Ajout Produit</p>
 
@@ -40,26 +40,29 @@ $result = $crud->getData($query);
             </p>
 
 
-                    <input class="form-control mb-4" type="text" name="nom">
+            <input class="form-control mb-4" type="text" name="nom">
 
 
-                    <select class="mdb-select form-control mb-4" name="type_animal">
-                        <option value="" disabled>Veuillez choisir un type</option>
+            <select class="mdb-select form-control mb-4" name="type_animal">
+                <option value="" disabled>Veuillez choisir un type</option>
 
-                            <?php
-                            foreach ($result as $key => $res) {
+                <?php
+                foreach ($result as $key => $res) {
 
-                                echo "<option value=\"1\"  selected>".$res['type']."</option>";
+                    echo "<option value=\"1\"  selected>".$res['type']."</option>";
 
-                            }
-                            ?>
-                    </select>
+                }
+                ?>
+            </select>
 
-                   <input class="form-control mb-4" type="text" name="prix">
+            <input class="form-control mb-4" type="text" name="prix">
 
-                    <input class="form-control mb-4" type="text" name="stock">
+            <input class="form-control mb-4" type="text" name="stock">
 
-                    <input class="btn btn-info btn-block" type="submit" name="Submit" value="Add">
+            <!-- Input file -->
+            <input class="form-control-file" id="exampleFormControlFile1" type="file" name="file" size="30">
+
+            <input class="btn btn-info btn-block" type="submit" name="Submit" value="Add">
 
 
         </form>

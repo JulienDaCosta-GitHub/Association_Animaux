@@ -37,7 +37,7 @@ $resulte = $crud->getData($quer);
 <div class="container  mt-3">
     <h3 class="text-center mt-4 mb-4">Animaux</h3>
     <div class="row ">
-        <table class="table ">
+        <table class="table">
             <thead>
             <tr>
                 <th>Nom</th>

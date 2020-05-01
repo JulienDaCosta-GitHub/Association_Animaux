@@ -23,21 +23,22 @@
         </p>
 
 
-                <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="nom" placeholder="Nom">
+        <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="nom" placeholder="Nom">
 
-                <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="type" placeholder="Type">
+        <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="type" placeholder="Type">
 
-                <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="race" placeholder="Race">
+        <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="race" placeholder="Race">
 
-               <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="taille" placeholder="Taille">
+        <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="taille" placeholder="Taille">
 
-               <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="poids" placeholder="Poids">
+        <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="poids" placeholder="Poids">
 
-                <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="age" placeholder="Âge">
+        <input class="form-control mb-4" id="defaultSubscriptionFormPassword" type="text" name="age" placeholder="Âge">
+        <!-- Input image -->
+        <input class="form-control-file" id="exampleFormControlFile1" type="file" name="file" size="30">
 
-        <!--input type="file" class="form-control-file" id="exampleFormControlFile1" name="chemin"-->
 
-               <input class="btn btn-info btn-block" type="submit" name="Submit" value="Add">
+        <input class="btn btn-info btn-block" type="submit" name="Submit" value="Add">
 
     </form>
 </div>

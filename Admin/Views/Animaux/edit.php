@@ -18,6 +18,7 @@ foreach ($result as $res) {
     $taille = $res['taille'];
     $poids = $res['poids'];
     $age = $res['age'];
+    $filename = $res['chemin'];
 }
 ?>
 <!doctype html>
@@ -36,7 +37,7 @@ foreach ($result as $res) {
 <br/><br/>
 <div class="container row ">
 
-    <form class="ext-center border border-light p-5" name="form1" method="post" action="../../Data/Animaux/edit.php">
+    <form class="ext-center border border-light p-5" name="form1" method="post" action="../../Data/Animaux/edit.php" enctype="multipart/form-data">
         <p class="h4 mb-4">Modifier</p>
         <p>Join our mailing list. We write rarely, but only the best content.</p>
 
@@ -45,27 +46,31 @@ foreach ($result as $res) {
         </p>
 
 
-            <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="nom" value="<?php echo $nom;?>">
+        <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="nom" value="<?php echo $nom;?>">
 
 
-            <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="type" value="<?php echo $type;?>">
+        <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="type" value="<?php echo $type;?>">
 
 
-           <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="race" value="<?php echo $race;?>">
+        <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="race" value="<?php echo $race;?>">
 
 
 
-             <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="taille" value="<?php echo $taille;?>">
+        <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="taille" value="<?php echo $taille;?>">
 
 
-             <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="poids" value="<?php echo $poids;?>">
+        <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="poids" value="<?php echo $poids;?>">
 
 
-             <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="age" value="<?php echo $age;?>">
+        <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" name="age" value="<?php echo $age;?>">
 
 
-                <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
-                <input class="btn btn-info btn-block" type="submit" name="update" value="Update">
+        <!-- Input File -->
+        <input class="form-control-file" id="exampleFormControlFile1" type="file" name="file" size="30" value="<?php echo $filename?>">
+
+
+        <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+        <input class="btn btn-info btn-block" type="submit" name="update" value="Update">
 
 
     </form>
