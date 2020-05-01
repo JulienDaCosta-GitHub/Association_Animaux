@@ -55,7 +55,23 @@ $resulte = $crud->getData($quer);
             foreach ($result as $key => $res) {
                 //while($res = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td class='w-25'> <img class='w-50' src='../miniature/".$res['image']."'/></td>";
+                if ($res['type']=='chien' || $res['type'] =='Chien')
+                {
+                    echo "<td class='w-25'> <img class='w-50' src='../miniature/Chien/".$res['image']."'/></td>";
+
+                }
+                elseif ($res['type']==='chat' || $res['type']==='Chat')
+                {
+                    echo "<td class='w-25'> <img class='w-50' src='../miniature/Chat/".$res['image']."'/></td>";
+
+
+                }
+                else
+                {
+                    echo "<td class='w-25'> <img class='w-50' src='../miniature/".$res['image']."'/></td>";
+
+
+                }
 
                 echo "<td>".$res['nom']."</td>";
                 echo "<td>".$res['type']."</td>";
@@ -98,7 +114,24 @@ $resulte = $crud->getData($quer);
                 foreach ($resulte as $key => $re) {
                     //while($res = mysqli_fetch_array($result)) {
                     echo "<tr>";
-                    echo "<td class='w-25'> <img class='w-50' src='../miniature/".$re['image']."'/></td>";
+                    if ($re['type_animal']=='chien' || $re['type_animal'] =='Chien')
+                    {
+                        echo "<td class='w-25'> <img class='w-50' src='../miniature/Chien/Produit/".$re['image']."'/></td>";
+
+                    }
+                    elseif ($re['type_animal']==='chat' || $re['type_animal']==='Chat')
+                    {
+                        echo "<td class='w-25'> <img class='w-50' src='../miniature/Chat/Produit/".$re['image']."'/></td>";
+
+
+                    }
+                    else
+                    {
+                        echo "<td class='w-25'> <img class='w-50' src='../miniature/".$re['image']."'/></td>";
+
+
+                    }
+
                     echo "<td>".$re['nom']."</td>";
                     echo "<td>".$re['type_animal']."</td>";
                     echo "<td>".$re['prix']."</td>";

@@ -28,6 +28,13 @@ function getExtension($str)
 }
 
 if(isset($_POST['Submit'])) {
+
+    $nom = $crud->escape_string($_POST['nom']);
+    $type = $crud->escape_string($_POST['type']);
+    $race = $crud->escape_string($_POST['race']);
+    $taille = $crud->escape_string($_POST['taille']);
+    $poids = $crud->escape_string($_POST['poids']);
+    $age = $crud->escape_string($_POST['age']);
     /*__________________________Gestion d'image_____________________________________________________*/
 
 
@@ -96,7 +103,22 @@ if(isset($_POST['Submit'])) {
             imagedestroy($tmp);
             imagedestroy($tmp1);
 
-            move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/' .basename($_FILES['file']['name']));
+            if ($type=='chien' || $type =='Chien')
+            {
+                move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/Chien/' .basename($_FILES['file']['name']));
+
+            }
+            elseif ($type==='chat' || $type==='Chat')
+            {
+                move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/Chat/' .basename($_FILES['file']['name']));
+
+            }
+            else
+            {
+                move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/' .basename($_FILES['file']['name']));
+
+
+            }
 
             /* echo "miniature: <img src='{$filename1}'/><br/><br/>";
              echo "image originale: <img src='{$filename}'/>";
@@ -106,12 +128,7 @@ if(isset($_POST['Submit'])) {
     /*____________________________________________________________________________________________________________________________*/
 
 
-    $nom = $crud->escape_string($_POST['nom']);
-    $type = $crud->escape_string($_POST['type']);
-    $race = $crud->escape_string($_POST['race']);
-    $taille = $crud->escape_string($_POST['taille']);
-    $poids = $crud->escape_string($_POST['poids']);
-    $age = $crud->escape_string($_POST['age']);
+
 
 
 

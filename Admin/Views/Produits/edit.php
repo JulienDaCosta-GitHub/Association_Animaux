@@ -58,7 +58,7 @@ $resulte = $crud->getData($quer);
             <?php
             foreach ($resulte as $key => $res) {
 
-                echo "<option value=\"1\"  selected>".$res['type']."</option>";
+                echo "<option value=\"".$res['type']."\">".$res['type']."</option>";
 
             }
             ?>

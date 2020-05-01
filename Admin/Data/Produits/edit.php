@@ -21,7 +21,12 @@ function getExtension($str)
 
 if(isset($_POST['update']))
 {
+    $id = $crud->escape_string($_POST['id']);
 
+    $nom = $crud->escape_string($_POST['nom']);
+    $type_animal = $crud->escape_string($_POST['type_animal']);
+    $prix = $crud->escape_string($_POST['prix']);
+    $stock = $crud->escape_string($_POST['stock']);
 
     /*__________________________Gestion d'image_____________________________________________________*/
 
@@ -90,8 +95,24 @@ if(isset($_POST['update']))
             imagedestroy($src);
             imagedestroy($tmp);
             imagedestroy($tmp1);
+            /*Condition pour le stockage du fichier dans le dossier chien ou chat */
 
-            move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/' .basename($_FILES['file']['name']));
+            if ($type_animal=='chien' || $type_animal =='Chien')
+            {
+                move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/Chien/Produit/' .basename($_FILES['file']['name']));
+
+            }
+            elseif ($type_animal=='chat' || $type_animal=='Chat')
+            {
+                move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/Chat/Produit/' .basename($_FILES['file']['name']));
+
+            }
+            else
+            {
+                move_uploaded_file($_FILES['file']['tmp_name'], '../../miniature/' .basename($_FILES['file']['name']));
+
+
+            }
 
             /* echo "miniature: <img src='{$filename1}'/><br/><br/>";
              echo "image originale: <img src='{$filename}'/>";
