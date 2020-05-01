@@ -4,7 +4,7 @@
 //connexion bdd
 
   $con=mysqli_connect('localhost','root','','association_animaux', '3308');
- 
+
   if(!$con)
   {
       die(' Please Check Your Connection'.mysqli_error($con));
@@ -31,8 +31,30 @@
 
 <?php
   foreach  ($produits as $produit) {
-      echo '<div class="card">
-      <div class="cadre"><img class="img_card" src="IMG/' . $produit["image"] . '" alt="Avatar"></div>
+      echo '<div class="card">';
+
+      if ($produit['type_animal']=='chien' || $produit['type_animal'] =='Chien')
+      {
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/Produit/' . $produit["image"] . '" alt="Avatar"></div>';
+      }
+      elseif ($produit['type_animal']==='chat' || $produit['type_animal']==='Chat')
+      {
+
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/Produit/' . $produit["image"] . '" alt="Avatar"></div>';
+
+
+
+      }
+      else
+      {
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $produit["image"] . '" alt="Avatar"></div>';
+
+
+
+      }
+
+      echo '
+     
       <div class="card_container">
     
         <h4 class="title_card"><b>' . $produit["nom"] . '</b></h4>
