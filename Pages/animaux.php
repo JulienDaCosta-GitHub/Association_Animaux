@@ -1,19 +1,22 @@
 <?php include "header.php"; ?>
 
-<?php 
-//connexion bdd
 
-  $con=mysqli_connect('localhost','root','','association_animaux', '3308');
- 
-  if(!$con)
-  {
-      die(' Please Check Your Connection'.mysqli_error($con));
-  }
 
-  $animals =  $con->query('SELECT * FROM animal');
+<?php
+//including the database connection file
 
+require_once('../Admin/Config/Crud.php') ;
+
+$crud = new Crud();
+
+//fetching data in descending order (lastest entry first)
+$query = "SELECT * FROM animal ORDER BY id DESC";
+$result = $crud->getData($query);
+//echo '<pre>'; print_r($result); exit;
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +33,7 @@
 <div class="all_cards">
 
 <?php
-  foreach  ($animals as $animal) {
+  foreach  ($result as $key => $res) {
       echo '<div class="card">' ;
 
         /*Condition
@@ -39,21 +42,22 @@
         Si l'animal est de ty pe chat alors récupérer l'imafe dans le dossier correspondant miniature/Chat
 
         */
-      if ($animal['type']=='chien' || $animal['type'] =='Chien')
+      if ($res['type']=='chien' || $res['type'] =='Chien')
       {
-          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/' . $animal["image"] . '" alt="Avatar"></div>';
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/' . $res["image"] . '" alt="Avatar"></div>';
+
       }
-      elseif ($animal['type']==='chat' || $animal['type']==='Chat')
+      elseif ($res['type']==='chat' || $res['type']==='Chat')
       {
 
-          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/' . $animal["image"] . '" alt="Avatar"></div>';
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/' . $res["image"] . '" alt="Avatar"></div>';
 
 
 
       }
       else
       {
-          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $animal["image"] . '" alt="Avatar"></div>';
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $res["image"] . '" alt="Avatar"></div>';
 
 
 
@@ -63,19 +67,28 @@
 
       <div class="card_container">
     
-        <h4 class="title_card"><b>' . $animal["nom"] . '</b></h4>
-        <p>Type: ' . $animal["type"] . '</p>
-        <p>Race: ' . $animal["race"] . '</p>
-        <p>Age: ' . $animal["age"] . ' ans</p>
-        <p>Taille: ' . $animal["taille"] . ' cm</p>
-        <p>Poids: ' . $animal["poids"] . ' Kg</p>
-        <button type="button" class="btn btn-primary">Réserver</button>
+        <h4 class="title_card"><b>' . $res["nom"] . '</b></h4>
+        <p>Type: ' . $res["type"] . '</p>
+        <p>Race: ' . $res["race"] . '</p>
+        <p>Age: ' . $res["age"] . ' ans</p>
+        <p>Taille: ' . $res["taille"] . ' cm</p>
+        <p>Poids: ' . $res["poids"] . ' Kg</p>
+        <div class="d-flex justify-content-sm-between">
+        <!--button type="button" class="btn btn-dark">Réserver</button>
+         <button type="button" class="btn btn-dark">Voir</button-->';
+     echo "<td><a href=\"Animaux/edit.php?id=$res[ID]\"><button class='btn  btn-dark'>Reserver</button></a> <a href=\"ficheanimal.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a></td>";
+
+
+    echo '    
+        </div>
+
       </div>
     </div>';
 }
       ?>
 
 </div>
+
 
 
 <?php include "footer.php"; ?>
