@@ -31,8 +31,36 @@
 
 <?php
   foreach  ($animals as $animal) {
-      echo '<div class="card">
-      <div class="cadre"><img class="img_card" src="IMG/' . $animal["image"] . '" alt="Avatar"></div>
+      echo '<div class="card">' ;
+
+        /*Condition
+
+        Si l'animal est de type chien alors récupérer l'image dans le dossier corespondant miniature/Chien
+        Si l'animal est de ty pe chat alors récupérer l'imafe dans le dossier correspondant miniature/Chat
+
+        */
+      if ($animal['type']=='chien' || $animal['type'] =='Chien')
+      {
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/' . $animal["image"] . '" alt="Avatar"></div>';
+      }
+      elseif ($animal['type']==='chat' || $animal['type']==='Chat')
+      {
+
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/' . $animal["image"] . '" alt="Avatar"></div>';
+
+
+
+      }
+      else
+      {
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $animal["image"] . '" alt="Avatar"></div>';
+
+
+
+      }
+
+  echo    '
+
       <div class="card_container">
     
         <h4 class="title_card"><b>' . $animal["nom"] . '</b></h4>
