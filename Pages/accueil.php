@@ -80,53 +80,52 @@ if (isset ($_POST['don'])){
   </div>
 </div>
 
-<div class="h3">
-  <h3>Insérer card</h3><br><br>
-</div>
+
 
 
 
 <!--don-->
+<?php if( userConnect() ) : ?>
 
 <div id="don">
-<h2>FAITES UN DON POUR SOUTENIR LES ANIMAUX</h2>
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<h1>Pourquoi faire un don?</h1>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate purus lorem, non viverra ipsum bibendum vel.
-          Etiam et lacinia leo, nec eleifend tortor. Vivamus aliquam libero non fringilla efficitur. Nulla nec pellentesque ante.
-           Mauris quis commodo ligula. Donec commodo ex vitae ligula eleifend, at iaculis arcu pulvinar. Pellentesque vehicula ex.</p>
-		
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form form action="#" method="POST">
-			<h1>Faire un don!</h1>
-			<br/><br/>
-         <input type="text"  name="montant" placeholder="Combien voulez vous donner?" title="Veuillez entrer des chiffres" required pattern="[0-9]"/><br/>
-         <button class="log-in" type="submit" name="don">Ajouter au panier</button>
-		</form>
-	</div>
+    <h2>FAITES UN DON POUR SOUTENIR LES ANIMAUX</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Pourquoi faire un don?</h1>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate purus lorem, non viverra ipsum bibendum vel.
+              Etiam et lacinia leo, nec eleifend tortor. Vivamus aliquam libero non fringilla efficitur. Nulla nec pellentesque ante.
+               Mauris quis commodo ligula. Donec commodo ex vitae ligula eleifend, at iaculis arcu pulvinar. Pellentesque vehicula ex.</p>
 
-	<div class="overlay-container">
-		<div class="overlay">
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form form action="#" method="POST">
+                <h1>Faire un don!</h1>
+                <br/><br/>
+             <input type="text"  name="montant" placeholder="Combien voulez vous donner?" title="Veuillez entrer des chiffres" required pattern="[0-9]"/><br/>
+             <button class="log-in" type="submit" name="don">Ajouter au panier</button>
+            </form>
+        </div>
 
-			<div class="overlay-panel overlay-left">
-				<h2>Faire un don maintenant!</h2>
-				<p>Venez en aide aux animaux</p>
-				<button class="ghost" id="signIn">faire un don</button>
-			</div>
+        <div class="overlay-container">
+            <div class="overlay">
 
-			<div class="overlay-panel overlay-right">
-				<h2>A quoi servirons les dons?</h2>
-            <p>nos objectifs et convictions</p>
-				<button class="ghost" id="signUp">En savoir plus</button>
-			</div>
-		</div>
-	</div>
+                <div class="overlay-panel overlay-left">
+                    <h2>Faire un don maintenant!</h2>
+                    <p>Venez en aide aux animaux</p>
+                    <button class="ghost" id="signIn">faire un don</button>
+                </div>
+
+                <div class="overlay-panel overlay-right">
+                    <h2>A quoi servirons les dons?</h2>
+                <p>nos objectifs et convictions</p>
+                    <button class="ghost" id="signUp">En savoir plus</button>
+                </div>
+            </div>
+        </div>
 </div>
-
+    <?php endif; ?>
 
 
 <script src="JS/SCRIPT.js"></script>
