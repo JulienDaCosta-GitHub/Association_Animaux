@@ -129,6 +129,8 @@ if(isset($_POST['confirmer'])) {
 <div class="container">
 
     <div class="alert alert-info invisible" role="alert" id="el">
+
+        <?php if( userConnect() ) : ?>
         <h4 class="alert-heading">Vous y êtes presque !</h4>
         <p>Choisissez une date afin de rencontrer <?php echo $nom ?></p>
         <hr>
@@ -136,6 +138,15 @@ if(isset($_POST['confirmer'])) {
             <input class="form-control w-25 mb-2" id="date" type="date" value="2020-05-02" name="date_rdv">
             <button class="btn btn-dark" name="confirmer">Confirmer</button>
         </form>
+
+        <?php else : ?>
+
+                <h4 class="alert-heading">Vous n'êtes pas connecté!</h4>
+                <p>Créez un compte ou connetez vous pour pouvoir réserver un rendz-vous </p>
+                <hr>
+                <p class="mb-0"><a class="alert-link" href="connexion.php">Se connecter</a> | <a class="alert-link" href="inscription.php">S'inscrire</a></p>
+
+        <?php endif; ?>
     </div>
 </div>
 </body>

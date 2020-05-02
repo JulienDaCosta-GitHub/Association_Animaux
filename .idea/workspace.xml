@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3a50cce6-d610-4871-a1e6-36d1a2d689ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Config/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Config/init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Animaux/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Animaux/Add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Animaux/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Animaux/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Produits/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Produits/Add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/Produits/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Produits/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ficheanimal.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/ficheanimal.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +67,7 @@
       <workItem from="1588208561915" duration="4375000" />
       <workItem from="1588214682208" duration="764000" />
       <workItem from="1588238217833" duration="6741000" />
+      <workItem from="1588430133640" duration="1318000" />
     </task>
     <servers />
   </component>

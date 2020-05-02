@@ -2,7 +2,7 @@
 //connexion bdd
 
 
-  $con=mysqli_connect('localhost','root','root','association_animaux', '8889');
+  /*$con=mysqli_connect('localhost','root','root','association_animaux', '8889');*/
 
 session_start();
 $bdd= new PDO('mysql:host=localhost;port=3308;dbname=association_animaux;charsert=utf8','root','');
