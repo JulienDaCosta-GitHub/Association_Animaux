@@ -141,7 +141,7 @@ if(isset($_POST['confirmer'])) {
 
         <?php else : ?>
 
-                <h4 class="alert-heading">Vous n'êtes pas connecté!</h4>
+                <h4 class="alert-heading">Vous n'êtes pas connecté.e !</h4>
                 <p>Créez un compte ou connetez vous pour pouvoir réserver un rendz-vous </p>
                 <hr>
                 <p class="mb-0"><a class="alert-link" href="connexion.php">Se connecter</a> | <a class="alert-link" href="inscription.php">S'inscrire</a></p>
