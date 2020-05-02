@@ -2,14 +2,14 @@
 <?php
 //connexion bdd
 
-<<<<<<< Updated upstream
+
 $con = mysqli_connect('localhost', 'root', 'root');
 mysqli_select_db($con, 'association_animaux');
 
-=======
+
   $con=mysqli_connect('localhost','root','root','association_animaux', '8889');
  
->>>>>>> Stashed changes
+
   if(!$con)
   {
       die(' Please Check Your Connection'.mysqli_error($con));
