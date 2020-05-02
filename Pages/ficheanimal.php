@@ -1,5 +1,6 @@
 
 <?php
+
 // including the database connection file
 
 require_once('../Admin/Config/Crud.php');
@@ -47,11 +48,16 @@ foreach ($resultat as $key => $res) {
 
 
 if(isset($_POST['confirmer'])) {
+
     /*On récupère l'id de l'user */
-   $userID = $res['ID'] ;
+   $userID = serialize($res['ID']);
+   var_dump($userID);
+
 
    /* On récupère l'id de l'animal */
     $animalID = $id;
+
+    var_dump($animalID);
    /* $dateTime = new DateTime();*/
 
 
