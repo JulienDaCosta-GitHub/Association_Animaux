@@ -16,6 +16,7 @@
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,15 +31,19 @@
         <p>Type: ' . $produit["type_animal"] . '</p>
         <p>Prix: ' . $produit["prix"] . '€</p>
         <p>Stock: ' . $produit["stock"] . ' unités</p>
+
         <button type="submit" name="add" style="margin-top: 5px;" class="btn btn-primary" value="Acheter">
             <a href="panier.php"></a>
             Acheter
          </button>   
 
+
+        <a href="panier.php" class="btn btn-primary">Ajouter au panier</i></a>
       </div>
     </div>';
 }
-      ?>
+
+   ?>
 
 </div>
 
@@ -46,6 +51,11 @@
     <!--texte-->
 <h1 class="center-text" style="font-size:60px"><u>Voici tous nos produits.</u></h1><br><br>
 <h3 class="center-text" style="font-size:30px">Parce que vos animaux le mérite bien !<br><br></h3>
+
+
+
+<?php include "footer.php"; ?>
+
 
 
 </body>
