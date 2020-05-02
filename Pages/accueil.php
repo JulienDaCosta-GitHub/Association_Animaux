@@ -1,3 +1,18 @@
+
+
+<?php
+/*$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
+$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+     
+if (isset ($_POST['don'])){
+   $sth = $bdd->prepare("INSERT INTO don (montant) VALUES(?)");
+   $sth->execute(array($_POST['montant']));
+}*/
+
+?>
+
+
 <?php include "header.php"; ?>
 
 <body><br>
@@ -69,8 +84,53 @@
   <h3>Insérer card</h3><br><br>
 </div>
 
-<div class="h3" id="don">
-  <h3>Insérer formulaire de don</h3><br><br>
+
+
+<!--don-->
+
+<div id="don">
+<h2>FAITES UN DON POUR SOUTENIR LES ANIMAUX</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Pourquoi faire un don?</h1>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate purus lorem, non viverra ipsum bibendum vel.
+          Etiam et lacinia leo, nec eleifend tortor. Vivamus aliquam libero non fringilla efficitur. Nulla nec pellentesque ante.
+           Mauris quis commodo ligula. Donec commodo ex vitae ligula eleifend, at iaculis arcu pulvinar. Pellentesque vehicula ex.</p>
+		
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form form action="#" method="POST">
+			<h1>Faire un don!</h1>
+			<br/><br/>
+         <input type="text"  name="montant" placeholder="Combien voulez vous donner?" title="Veuillez entrer des chiffres" required pattern="[0-9]"/><br/>
+         <button class="log-in" type="submit" name="don">Ajouter au panier</button>
+		</form>
+	</div>
+
+	<div class="overlay-container">
+		<div class="overlay">
+
+			<div class="overlay-panel overlay-left">
+				<h2>Faire un don maintenant!</h2>
+				<p>Venez en aide aux animaux</p>
+				<button class="ghost" id="signIn">faire un don</button>
+			</div>
+
+			<div class="overlay-panel overlay-right">
+				<h2>A quoi servirons les dons?</h2>
+            <p>nos objectifs et convictions</p>
+				<button class="ghost" id="signUp">En savoir plus</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="JS/SCRIPT.js"></script>
+</body>
 </div>
 
 </body>
