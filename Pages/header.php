@@ -29,7 +29,7 @@
         <a class="nav-link" href="produits.php">Les produits</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="don.php">Faire un don</a>
+        <a class="nav-link" href="accueil.php#don">Faire un don</a>
       </li>
     </ul>
     </div>
