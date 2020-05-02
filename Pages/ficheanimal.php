@@ -38,7 +38,7 @@ require_once('../Admin/Config/Validation.php');
 $crud = new Crud();
 $validation = new Validation();
 
-//fetching data in descending order (lastest entry first)
+//fetching data de la table user pour récupérr l'ide user */
 $query = "SELECT * FROM user ORDER BY id DESC";
 $resultat = $crud->getData($query);
 foreach ($resultat as $key => $res) {
@@ -48,10 +48,13 @@ foreach ($resultat as $key => $res) {
 
 
 if(isset($_POST['confirmer'])) {
+    /*On récupère l'id de l'user */
    $userID = $res['ID'] ;
+
+   /* On récupère l'id de l'animal */
     $animalID = $id;
    /* $dateTime = new DateTime();*/
-    var_dump($userID);
+
 
 
     $dateRdv = $crud->escape_string($_POST['date_rdv']);
@@ -68,6 +71,7 @@ if(isset($_POST['confirmer'])) {
 
         //insert data to database
         $result = $crud->execute("INSERT INTO reservation(user_ID,animal_ID,datetime,date_rdv) VALUES('$userID','$animalID',NOW(), '$dateRdv')");
+
 
         //display success message
         echo '<div class="alert alert-primary" role="alert">
