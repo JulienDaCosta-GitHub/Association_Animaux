@@ -5,13 +5,14 @@ require_once('../Admin/Config/init.php');?>
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Les Amis Des Animaux</title>
+  </head>
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -100,4 +101,4 @@ require_once('../Admin/Config/init.php');?>
 
         </div>
     </nav>
-</head><br>
+<br>
