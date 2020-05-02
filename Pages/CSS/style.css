@@ -24,39 +24,45 @@
 
 .h3 {
   font: italic 1.2em "Fira Sans", serif;
-  font-size:40px
+  font-size: 2.5em;
 }
 
-.doggoclass1 {
-  border-radius: 8px;
-  margin-top: 50px;
-  margin-left: 400px;
-  margin-bottom: 75px;
-  
+.blockContent {
+  margin-top: 150px;
+  margin-bottom: 7%;
+  margin-left: 200px !important;
 
+}
+
+#doggo1 {
+  border-radius: 8px;
+  margin-left: 49%;
+  
     max-width: 100%;
     height: auto;
   
 }
 
-.block1 {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.paragraphe {
+#paragraphe1 {
   font: italic 1.2em "Fira Sans", serif;
-  font-size: 40px;
-  width: 60%;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  width: 55%;
   text-align: center;
-  float: right;
+  margin-left: 45%;
+  
 }
 
-.doggoclass2 {
+#paragraphe2 {
+  font: italic 1.2em "Fira Sans", serif;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  width: 55%;
+  text-align: center;
+  margin-left: 33%;
+}
+
+#doggo2 {
   border-radius: 8px;
-  margin-top: 75px;
-  margin-left: 400px;
-  margin-bottom: 75px;
+  margin-left: 18%;
     max-width: 100%;
     height: auto;
   
