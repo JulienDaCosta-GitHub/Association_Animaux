@@ -1,17 +1,18 @@
 <?php include "header.php"; ?>
 
-<?php 
-//connexion bdd
 
-  $con=mysqli_connect('localhost','root','','association_animaux', '3308');
 
-  if(!$con)
-  {
-      die(' Please Check Your Connection'.mysqli_error($con));
-  }
+<?php
+//including the database connection file
 
-  $produits =  $con->query('SELECT * FROM produit');
+require_once('../Admin/Config/Crud.php') ;
 
+$crud = new Crud();
+
+//fetching data in descending order (lastest entry first)
+$query = "SELECT * FROM produit ORDER BY id DESC";
+$result = $crud->getData($query);
+//echo '<pre>'; print_r($result); exit;
 
 ?>
 
@@ -30,7 +31,7 @@
 <div class="all_cards">
 
 <?php
-  foreach  ($produits as $produit) {
+  foreach  ($result as $key => $res) {
       echo '<div class="card">';
 
       /*Condition
@@ -40,21 +41,21 @@
 
        */
 
-      if ($produit['type_animal']=='chien' || $produit['type_animal'] =='Chien')
+      if ($res['type_animal']=='chien' || $res['type_animal'] =='Chien')
       {
-          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/Produit/' . $produit["image"] . '" alt="Avatar"></div>';
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/Produit/' . $res["image"] . '" alt="Avatar"></div>';
       }
-      elseif ($produit['type_animal']==='chat' || $produit['type_animal']==='Chat')
+      elseif ($res['type_animal']==='chat' || $res['type_animal']==='Chat')
       {
 
-          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/Produit/' . $produit["image"] . '" alt="Avatar"></div>';
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/Produit/' . $res["image"] . '" alt="Avatar"></div>';
 
 
 
       }
       else
       {
-          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $produit["image"] . '" alt="Avatar"></div>';
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $res["image"] . '" alt="Avatar"></div>';
 
 
 
@@ -64,22 +65,21 @@
      
       <div class="card_container">
     
-        <h4 class="title_card"><b>' . $produit["nom"] . '</b></h4>
-        <p>Type: ' . $produit["type_animal"] . '</p>
-        <p>Prix: ' . $produit["prix"] . '€</p>
-        <p>Stock: ' . $produit["stock"] . ' unités</p>
-        <button type="button" class="btn btn-primary">Acheter</button>
-      </div>
+        <h4 class="title_card"><b>' . $res["nom"] . '</b></h4>
+        <p>Type: ' . $res["type_animal"] . '</p>
+        <p>Prix: ' . $res["prix"] . '€</p>
+        <p>Stock: ' . $res["stock"] . ' unités</p>';
+      echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
+      echo ' </div>
     </div>';
-}
+
+
+  }
       ?>
 
 </div>
 
-<body>
-    <!--texte-->
-<h1 class="center-text" style="font-size:60px"><u>Voici tous nos produits.</u></h1><br><br>
-<h3 class="center-text" style="font-size:30px">Parce que vos animaux le mérite bien !<br><br></h3>
+
 
 </body>
 
