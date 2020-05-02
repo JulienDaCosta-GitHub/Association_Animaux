@@ -69,7 +69,7 @@ $result = $crud->getData($query);
         <p>Type: ' . $res["type_animal"] . '</p>
         <p>Prix: ' . $res["prix"] . '€</p>
         <p>Stock: ' . $res["stock"] . ' unités</p>';
-      echo "<td><a href=\"edit.php?id=$res[ID]\"><button class='btn  btn-dark'>Reserver</button></a> <a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a></td>";
+      echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
       echo ' </div>
     </div>';
 

@@ -72,6 +72,8 @@ foreach ($result as $res) {
             <!-- Quotation -->
             <p>Un indispensable pour votre <?php echo $type_animal ?>!
             </p>
+            <?php echo "<a href=\"ficheanimal.php?id=$res[ID]\"><button class='btn btn-dark'>Ajouter au panier</button></a>"; ?>
+
         </div>
 
     </div>

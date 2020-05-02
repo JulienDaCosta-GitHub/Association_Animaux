@@ -76,7 +76,7 @@ $result = $crud->getData($query);
         <div class="d-flex justify-content-sm-between">
         <!--button type="button" class="btn btn-dark">Réserver</button>
          <button type="button" class="btn btn-dark">Voir</button-->';
-     echo "<td><a href=\"Animaux/edit.php?id=$res[ID]\"><button class='btn  btn-dark'>Reserver</button></a> <a href=\"ficheanimal.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a></td>";
+     echo "<a href=\"ficheanimal.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
 
 
     echo '    

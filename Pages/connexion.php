@@ -1,7 +1,7 @@
 <?php 
 //connexion bdd
 
-  $con=mysqli_connect('localhost','root','','association_animaux', '3308');
+  $con=mysqli_connect('localhost','root','root','association_animaux', '8889');
  
   if(!$con)
   {
