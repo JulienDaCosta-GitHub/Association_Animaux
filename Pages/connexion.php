@@ -8,6 +8,49 @@ mysqli_select_db($con, 'association_animaux');
 
 
   $con=mysqli_connect('localhost','root','root','association_animaux', '8889');
+?>
+<?php
+//connexion bdd
+session_start();
+$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','root');
+
+//début de la session: verifier les données de mdp et nom
+    if(isset($_POST['Login']))
+    {
+        $mail = htmlspecialchars($_POST['mail']);
+        $mdp = trim($_POST['mdp']);
+//si nom mdp est vide
+       if(empty($mail) || empty($mdp))
+       {
+       }
+//si nom ou mdp correspond pas a ce qu'on a dans la bdd
+       else
+       {
+            $requser = $bdd->prepare("SELECT * FROM user WHERE mail = ? AND mdp = ?");
+            $requser->execute(array( $mail, crypt($mdp, "$6$rounds=5000$AZIREHsdfd3348349fferrreAEI34ZZE4343435ERereerer343546ERedfdT45452eRRTR45$")));
+            $userexist = $requser->rowCount();
+ // reussi else pas réussi
+        if($userexist == 1)
+            {
+                $_SESSION['user']= $mail;
+                header("location:wellcome.php");
+
+            }
+            else
+            {
+                header("location:connexion.php?Invalid= votre mot de passe ou nom n'est pas bon ");
+            }
+       }
+    }
+
+?>
+
+
+<?php 
+//connexion bdd
+session_start();
+$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','root');
+
  
 
   if(!$con)

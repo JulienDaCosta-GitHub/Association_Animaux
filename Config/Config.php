@@ -8,10 +8,10 @@ class Config
     public function __construct(){
         $this->config = [
             'dbHost' => 'localhost',
-            'dbPort' => '3308',
+            'dbPort' => '888ç',
             'dbName' => 'association_animaux',
             'dbUser' =>  'root',
-            'dbPassword' => ''
+            'dbPassword' => 'root'
         ];
     }
 
