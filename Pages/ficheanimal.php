@@ -7,6 +7,9 @@ require_once('../Admin/Config/Crud.php');
 
 $crud = new Crud();
 
+
+/*Récupérer les données de l'animal qui s'affichent dans le form */
+
 //getting id from url
 $id = $crud->escape_string($_GET['id']);
 
@@ -35,10 +38,20 @@ require_once('../Admin/Config/Validation.php');
 $crud = new Crud();
 $validation = new Validation();
 
+//fetching data in descending order (lastest entry first)
+$query = "SELECT * FROM user ORDER BY id DESC";
+$resultat = $crud->getData($query);
+foreach ($resultat as $key => $res) {
+    $res['ID'] ;
+}
+
+
+
 if(isset($_POST['confirmer'])) {
-   /* $userID = ;*/
+   $userID = $res['ID'] ;
     $animalID = $id;
-    $dateTime = new DateTime();;
+   /* $dateTime = new DateTime();*/
+    var_dump($userID);
 
 
     $dateRdv = $crud->escape_string($_POST['date_rdv']);
@@ -54,10 +67,12 @@ if(isset($_POST['confirmer'])) {
         // if all the fields are filled (not empty)
 
         //insert data to database
-        $result = $crud->execute("INSERT INTO reservation(user_ID,animal_ID,datetime,date_rdv) VALUES('$nom','$type','$race', '$taille', '$poids', '$age', '$filename')");
+        $result = $crud->execute("INSERT INTO reservation(user_ID,animal_ID,datetime,date_rdv) VALUES('$userID','$animalID',NOW(), '$dateRdv')");
 
         //display success message
-        header("Location: ../../Views/index.php");
+        echo '<div class="alert alert-primary" role="alert">
+  A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>';
     }
 
 
