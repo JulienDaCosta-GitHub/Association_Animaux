@@ -1,4 +1,3 @@
-<?php include "header.php"; ?>
 
 <?php
 // including the database connection file
@@ -93,6 +92,13 @@ if(isset($_POST['confirmer'])) {
     <title>Document</title>
 </head>
 <body>
+<header>
+    <?php
+    require_once('header.php');
+
+    ?>
+
+</header>
 
 
     <div class="container">

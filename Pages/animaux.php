@@ -73,7 +73,8 @@ $result = $crud->getData($query);
         <p>Age: ' . $res["age"] . ' ans</p>
         <p>Taille: ' . $res["taille"] . ' cm</p>
         <p>Poids: ' . $res["poids"] . ' Kg</p>
-        <div class="d-flex justify-content-sm-between">
+        <div class="d-flex justify-content-sm-between"
+        >
         <!--button type="button" class="btn btn-dark">Réserver</button>
          <button type="button" class="btn btn-dark">Voir</button-->';
      echo "<a href=\"ficheanimal.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
