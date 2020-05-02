@@ -1,7 +1,7 @@
 <?php 
 //connexion bdd
 session_start();
-$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','root');
+$bdd= new PDO('mysql:host=localhost;port=3308;dbname=association_animaux;charsert=utf8','root','');
  
 //début de la session: verifier les données de mdp et nom
     if(isset($_POST['Login']))
