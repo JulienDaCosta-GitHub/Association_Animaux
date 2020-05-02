@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3a50cce6-d610-4871-a1e6-36d1a2d689ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Config/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Config/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Views/Animaux/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Animaux/Add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Views/Animaux/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Animaux/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Views/Produits/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Produits/Add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Views/Produits/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/Produits/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Views/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/deconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/deconnexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/inscription.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,16 +91,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Admin/Views/Animaux/edit.php</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

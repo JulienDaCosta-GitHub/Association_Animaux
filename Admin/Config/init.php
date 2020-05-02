@@ -15,9 +15,9 @@ function userConnect(){
 }
 
 //fonction adminConnect() :
-/*function adminConnect(){
+function adminConnect(){
 
-    if( userConnect() && $_SESSION['user']['role'] == 1 ){ //Si l'internaute est connecté ET qu'il est admin (user = 1)
+    if( userConnect() && $_SESSION['user'] == 'admin@admin.com' ){ //Si l'internaute est connecté ET qu'il est admin (user = 1)
 
 
         return true;
@@ -26,7 +26,6 @@ function userConnect(){
         return false;
     }
 }
-*/
 
 
 

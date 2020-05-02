@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-require_once('../Admin/Config/init.php');?>
+require_once('Config/init.php');?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,13 +23,13 @@ require_once('../Admin/Config/init.php');?>
 
             <div> <!-- boutons gauche -->
                 <ul class="navbar-nav mr-auto">
-                    <a class="nav-link" href="accueil.php">Accueil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../Pages/accueil.php">Accueil<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="animaux.php">Les animaux</span></a>
+                        <a class="nav-link" href="../Pages/animaux.php">Les animaux</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="produits.php">Les produits</span></a>
+                        <a class="nav-link" href="../Pages/produits.php">Les produits</span></a>
                     </li>
 
                     <?php if( userConnect() ) : ?>
@@ -39,22 +39,22 @@ require_once('../Admin/Config/init.php');?>
 
 
 
-                    <?php if( adminConnect() ) : ?>
+                        <?php if( adminConnect() ) : ?>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="../Admin/Views/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Gestion des tâches
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="../Admin/Views/index.php">Tableaux</a>
-                                <a class="dropdown-item" href="../Admin/Views/Animaux/Add.php">Ajouter un animal</a>
-                                <a class="dropdown-item" href="../Admin/Views/Produits/Add.php">Ajouter un produit</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="Views/index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gestion des tâches
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="index.php">Tableaux</a>
+                            <a class="dropdown-item" href="Animaux/Add.php">Ajouter un animal</a>
+                            <a class="dropdown-item" href="Produits/Add.php">Ajouter un produit</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
 
-                    <?php endif; ?>
+                <?php endif; ?>
 
                 </ul>
 

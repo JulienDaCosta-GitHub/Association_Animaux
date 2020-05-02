@@ -27,6 +27,9 @@ $resulte = $crud->getData($quer);
 
 
 <body>
+<header>
+<?php require_once('../nav.inc.php'); ?>
+</header>
 
 <!-- DIV CONTAINER ANIMAUX  ________________________-->
 <div class="container  mt-3">
