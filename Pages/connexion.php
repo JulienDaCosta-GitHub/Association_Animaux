@@ -1,31 +1,29 @@
 <?php 
 //connexion bdd
-
-  $con=mysqli_connect('localhost','root','','association_animaux', '3308');
- 
-  if(!$con)
-  {
-      die(' Please Check Your Connection'.mysqli_error($con));
-  }
-  
-//début de la session: verifier les données de mdp et nom
 session_start();
+$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
+ 
+//début de la session: verifier les données de mdp et nom
     if(isset($_POST['Login']))
     {
+        $mail = htmlspecialchars($_POST['mail']);
+        $mdp = trim($_POST['mdp']);
 //si nom mdp est vide
-       if(empty($_POST['nom']) || empty($_POST['mdp']))
+       if(empty($mail) || empty($mdp))
        {
        }
 //si nom ou mdp correspond pas a ce qu'on a dans la bdd
        else
        {
-            $query="select * from user where nom='".$_POST['nom']."' and mdp='".$_POST['mdp']."'";
-            $result=mysqli_query($con,$query);
+            $requser = $bdd->prepare("SELECT * FROM user WHERE mail = ? AND mdp = ?");
+            $requser->execute(array( $mail, crypt($mdp, "$6$rounds=5000$AZIREHsdfd3348349fferrreAEI34ZZE4343435ERereerer343546ERedfdT45452eRRTR45$")));
+            $userexist = $requser->rowCount();
  // reussi else pas réussi
-            if(mysqli_fetch_assoc($result))
+        if($userexist == 1)
             {
-                $_SESSION['user']=$_POST['nom'];
+                $_SESSION['user']= $mail;
                 header("location:wellcome.php");
+                exit;
             }
             else
             {
@@ -35,6 +33,44 @@ session_start();
     }
   
 ?>
+
+
+<?php 
+//connexion bdd
+session_start();
+$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
+ 
+//début de la session: verifier les données de mdp et nom
+    if(isset($_POST['Login']))
+    {
+        $mail = htmlspecialchars($_POST['mail']);
+        $mdp = trim($_POST['mdp']);
+//si nom mdp est vide
+       if(empty($mail) || empty($mdp))
+       {
+       }
+//si nom ou mdp correspond pas a ce qu'on a dans la bdd
+       else
+       {
+            $requser = $bdd->prepare("SELECT * FROM user WHERE mail = ? AND mdp = ?");
+            $requser->execute(array( $mail, crypt($mdp, "$6$rounds=5000$AZIREHsdfd3348349fferrreAEI34ZZE4343435ERereerer343546ERedfdT45452eRRTR45$")));
+            $userexist = $requser->rowCount();
+ // reussi else pas réussi
+        if($userexist == 1)
+            {
+                $_SESSION['user']= $mail;
+                header("location:wellcome.php");
+                exit;
+            }
+            else
+            {
+                header("location:connexion.php?Invalid= votre mot de passe ou nom n'est pas bon ");
+            }
+       }
+    }
+  
+?>
+
 
 <!doctype html>
 
@@ -55,14 +91,14 @@ session_start();
 
 <div class="overlay">
 
-<form action="" method="post">
+<form action="" method="POST">
    
       <div class="con">
     
-      <header class="head-form">
+      <div class="header-form">
          <h2>Connexion</h2>
        
-      </header>
+</div>
 
       <br>
       <div class="field-set">
@@ -72,13 +108,13 @@ session_start();
                 <span class="input-item">
                 <i class="fa fa-user-circle"></i>
                 </span>
-                <input class="form-input" id="txt-input" type="text" placeholder="nom" name="nom" required>
+                <input class="form-input" id="txt-input" type="email"  name="mail" placeholder="votre email gmail" title="Veullez entrer un mail valide" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
             <br>
             <!--user mdp -->
                 <span class="input-item">
                 <i class="fa fa-key"></i>
                 </span>
-                <input class="form-input" type="password" placeholder="mot de passe" id="mdp"  name="mdp" required>
+                <input class="form-input" type="password" placeholder="mot de passe" id="mdp"  name="mdp" title="Seul les majuscules, minuscules et chiffres sont autorisés" name="mdp" required pattern="[0-9a-zA-Z_.-]*">
             <!--monter/cacher -->
             <span>
                 <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
@@ -106,7 +142,7 @@ session_start();
                   <!--mot de passe oublié-->
                         <button class="btn submits frgt-pass">mot de passe oublié</button>
                   <!--lien connexion-->
-                  <button class="btn submits sign-up"><a href="inscription.php">inscription</a> 
+                  <button class="btn submits switch"><a href="inscription.php">inscription</a> 
                   <!--icon connexion -->
                         <i class="fa fa-user-plus" aria-hidden="true"></i>
                         </button>
