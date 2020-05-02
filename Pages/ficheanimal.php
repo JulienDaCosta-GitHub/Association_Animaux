@@ -13,6 +13,7 @@ $crud = new Crud();
 //getting id from url
 $id = $crud->escape_string($_GET['id']);
 
+
 //selecting data associated with this particular id
 $result = $crud->getData("SELECT * FROM animal WHERE id=$id");
 
@@ -39,31 +40,37 @@ $crud = new Crud();
 $validation = new Validation();
 
 //fetching data de la table user pour récupérr l'ide user */
-$query = "SELECT * FROM user ORDER BY id DESC";
-$resultat = $crud->getData($query);
-foreach ($resultat as $key => $res) {
+$query = "SELECT ID FROM user ORDER BY id DESC";
+$result = $crud->getData($query);
+foreach ($result as $key => $re) {
     $res['ID'] ;
 }
+var_dump($result);
 
 
 
 if(isset($_POST['confirmer'])) {
 
     /*On récupère l'id de l'user */
-   $userID = serialize($res['ID']);
+   $userID = $re['ID'];
    var_dump($userID);
 
 
-   /* On récupère l'id de l'animal */
-    $animalID = $id;
+   /* On récupère l'id de l'animal
+    $animalID =implode(",",$id) ;
 
     var_dump($animalID);
-   /* $dateTime = new DateTime();*/
+   */
+   $date = date("Y-m-d");
+   var_dump($date);
 
 
-
+    $id = $crud->escape_string($_GET['id']);
     $dateRdv = $crud->escape_string($_POST['date_rdv']);
     $msg = $validation->check_empty($_POST, array('date_rdv'));
+    var_dump($id);
+    var_dump($dateRdv);
+
 
     // checking empty fields
     if($msg != null) {
@@ -75,7 +82,7 @@ if(isset($_POST['confirmer'])) {
         // if all the fields are filled (not empty)
 
         //insert data to database
-        $result = $crud->execute("INSERT INTO reservation(user_ID,animal_ID,datetime,date_rdv) VALUES('$userID','$animalID',NOW(), '$dateRdv')");
+       // $result = $crud->execute("INSERT INTO reservation(user_ID,animal_ID,datetime,date_rdv) VALUES('$userID','$id','$date', '$dateRdv')");
 
 
         //display success message
