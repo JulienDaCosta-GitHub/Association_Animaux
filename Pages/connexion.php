@@ -7,7 +7,7 @@
 session_start();
 $bdd= new PDO('mysql:host=localhost;port=3308;dbname=association_animaux;charsert=utf8','root','');
 
- 
+
 //début de la session: verifier les données de mdp et nom
     if(isset($_POST['Login']))
     {
@@ -149,7 +149,7 @@ $bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','r
                   <!--mot de passe oublié-->
                         <button class="btn submits frgt-pass">mot de passe oublié</button>
                   <!--lien connexion-->
-                  <button class="btn submits switch"><a href="inscription.php">inscription</a> 
+                  <button class="btn submits switch"><a href="inscription.php">inscription</a>
                   <!--icon connexion -->
                         <i class="fa fa-user-plus" aria-hidden="true"></i>
                         </button>
