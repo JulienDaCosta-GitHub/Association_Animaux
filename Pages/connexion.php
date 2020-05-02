@@ -140,7 +140,7 @@ $bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','r
       
                   <!--buttons -->
                   <!--button login-->
-          <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+
 
           <button class="log-in"  type="submit" name="Login"> se connecter </button>
                      </div>
