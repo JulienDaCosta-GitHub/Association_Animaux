@@ -66,6 +66,7 @@ $bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','r
             else
             {
                 header("location:connexion.php?Invalid= votre mot de passe ou nom n'est pas bon ");
+                exit;
             }
        }
     }
