@@ -13,9 +13,60 @@
    width: 50%;
 }
 
-.title {
+.title, h3 {
   text-align: center;
 }
+
+.title {
+  font-family: 'Candal';
+  font-size: 60px;
+}
+
+.h3 {
+  font: italic 1.2em "Fira Sans", serif;
+  font-size: 2.5em;
+}
+
+.blockContent {
+  margin-top: 150px;
+  margin-bottom: 7%;
+
+}
+
+#doggo1 {
+  border-radius: 8px;
+  margin-left: 52%;
+  
+    max-width: 100%;
+    height: auto;
+  
+}
+
+#paragraphe1 {
+  font: italic 1.2em "Fira Sans", serif;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  width: 55%;
+  text-align: center;
+  margin-left: 45%;
+  
+}
+
+#paragraphe2 {
+  font: italic 1.2em "Fira Sans", serif;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  width: 55%;
+  text-align: center;
+  margin-left: 33%;
+}
+
+#doggo2 {
+  border-radius: 8px;
+  margin-left: 18%;
+    max-width: 100%;
+    height: auto;
+  
+}
+
 
 .all_cards {
   display: flex;

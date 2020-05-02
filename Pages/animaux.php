@@ -91,6 +91,7 @@ $result = $crud->getData($query);
 
 
 
+
 <?php include "footer.php"; ?>
     
      <!-- carousel -->
@@ -129,6 +130,12 @@ $result = $crud->getData($query);
   </a>
 </div><br>
 
-</body>
-</html>
+<body>
+    <!--texte-->
+<h1 class="center-text" style="font-size:60px"><u>Voici tous nos animaux.</u></h1><br><br>
+<h3 class="center-text" style="font-size:30px">Nos copains ouaiiiiiis !<br><br></h3>
 
+
+</body>
+
+<?php include "footer.php"; ?>

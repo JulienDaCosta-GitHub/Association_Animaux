@@ -10,7 +10,10 @@
     <title>Document</title>
 </head>
 <body>
-<a href="index.php">Home</a>
+<header>
+    <?php require_once('../../nav.inc.php'); ?>
+</header>
+
 <br/><br/>
 <div class="row col-sm-6">
     <form class="text-center border border-light p-5" action="../../Data/Animaux/Add.php" method="post" name="form1" enctype="multipart/form-data">

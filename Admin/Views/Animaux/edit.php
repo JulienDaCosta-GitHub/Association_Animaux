@@ -33,7 +33,11 @@ foreach ($result as $res) {
     <title>Document</title>
 </head>
 <body>
-<a href="../index.php">Home</a>
+<header>
+    <?php require_once('../../nav.inc.php'); ?>
+
+</header>
+
 <br/><br/>
 <div class="container row ">
 

@@ -1,8 +1,8 @@
 <?php include "header.php"; ?>
 
-<body>
+<body><br>
 
-<h1 class="center-text" style="font-size:60px"><u>Les amis des animaux</u></h1><br>
+<h1 class="center-text title"><b>Les amis des animaux</b></h1><br><br>
 
     <!-- carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -38,9 +38,40 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div><br>
+</div><br><br><br>
 
-    <h3 class="center-text" style="font-size:30px"><u>Les amis des animaux</u> est une association qui vient en aide aux animaux<br> dont les propriétaires n'ont plus les moyens d'assurer leur bien-être,<br> qui sont laissés à l'abandon ou qui étaient maltraités.</h3>
+<h3 class="h3"><b>Les amis des animaux</b> est une association qui vient en aide aux animaux<br> dont les propriétaires n'ont plus les moyens d'assurer leur bien-être,
+    <br> qui sont laissés à l'abandon ou qui étaient maltraités.</h3>
+
+<div class="row blockContent w-100">
+  <div class="col-4">
+    <img id="doggo1" src="IMG/chienaccueil1.jpg">
+  </div>
+  <div class="col-6">
+    <p id="paragraphe1">Martinus agens illas provincias pro praefectis aerumnas 
+      innocentium graviter gemens saepeque obsecrans, ut ab omni culpa inmunibus parceretur, cum non inpetraret, minabatur se discessurum: 
+      ut saltem id metuens perquisitor malivolus tandem desineret quieti coalitos homines in aperta pericula proiectare.</p>
+  </div>
+</div>
+
+<div class="row blockContent w-100">
+  <div class="col-6">
+    <p id="paragraphe2">Martinus agens illas provincias pro praefectis aerumnas 
+      innocentium graviter gemens saepeque obsecrans, ut ab omni culpa inmunibus parceretur, cum non inpetraret, minabatur se discessurum: 
+      ut saltem id metuens perquisitor malivolus tandem desineret quieti coalitos homines in aperta pericula proiectare.</p>
+  </div>
+  <div class="col-4">
+    <img id="doggo2" src="IMG/chienaccueil2.jpg">
+  </div>
+</div>
+
+<div class="h3">
+  <h3>Insérer card</h3><br><br>
+</div>
+
+<div class="h3" id="don">
+  <h3>Insérer formulaire de don</h3><br><br>
+</div>
 
 </body>
 
