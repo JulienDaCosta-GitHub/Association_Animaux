@@ -14,6 +14,11 @@ $result = $crud->getData($query);
 $quer = "SELECT * FROM produit ORDER BY id DESC";
 $resulte = $crud->getData($quer);
 //echo '<pre>'; print_r($result); exit;
+
+//fetching data in descending order (lastest entry first)
+$que = "SELECT * FROM reservation ORDER BY id DESC";
+$resu = $crud->getData($que);
+//echo '<pre>'; print_r($result); exit;
 ?>
 
 <!DOCTYPE html>
@@ -145,6 +150,47 @@ $resulte = $crud->getData($quer);
                 </tbody>
             </table>
             <a href="Produits/Add.php"><button type="button" class="btn btn-outline-success">Ajouter</button></a>
+
+        </div>
+
+
+        <!--_________________________________LES COMMANDES____________________________________*/ -->
+
+
+        <h3 class="text-center mt-4 mb-4">Réservations</h3>
+        <div class="row ">
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>User_id</th>
+
+                    <th>Animal_id</th>
+                    <th>dateTime</th>
+                    <th>Rendez-vous le :</th>
+
+
+                    <!-- Boucle foreach pour les boutonds tans q'uil y'a des produits ajouter un bouton -->
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach ($resu as $key => $r) {
+                    //while($res = mysqli_fetch_array($result)) {
+                    echo "<tr>";
+
+
+                    echo "<td>".$r['user_ID']."</td>";
+                    echo "<td>".$r['animal_ID']."</td>";
+                    echo "<td>".$r['datetime']."</td>";
+                    echo "<td>".$r['date_rdv']."</td>";
+
+                }
+                ?>
+                </tbody>
+            </table>
+
 
         </div>
 
