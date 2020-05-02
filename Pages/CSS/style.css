@@ -13,9 +13,55 @@
    width: 50%;
 }
 
-.title {
+.title, h3 {
   text-align: center;
 }
+
+.title {
+  font-family: 'Candal';
+  font-size: 60px;
+}
+
+.h3 {
+  font: italic 1.2em "Fira Sans", serif;
+  font-size:40px
+}
+
+.doggoclass1 {
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-left: 400px;
+  margin-bottom: 75px;
+  
+
+    max-width: 100%;
+    height: auto;
+  
+}
+
+.block1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.paragraphe {
+  font: italic 1.2em "Fira Sans", serif;
+  font-size: 40px;
+  width: 60%;
+  text-align: center;
+  float: right;
+}
+
+.doggoclass2 {
+  border-radius: 8px;
+  margin-top: 75px;
+  margin-left: 400px;
+  margin-bottom: 75px;
+    max-width: 100%;
+    height: auto;
+  
+}
+
 
 .all_cards {
   display: flex;

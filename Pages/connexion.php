@@ -26,10 +26,12 @@ session_start();
             {
                 $_SESSION['user']=$_POST['nom'];
                 header("location:wellcome.php");
+                exit;
             }
             else
             {
                 header("location:connexion.php?Invalid= votre mot de passe ou nom n'est pas bon ");
+                exit;
             }
        }
     }

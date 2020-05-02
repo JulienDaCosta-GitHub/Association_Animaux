@@ -2,7 +2,7 @@
 
 <body>
 
-<h1 class="center-text" style="font-size:60px"><u>Les amis des animaux</u></h1><br>
+<h1 class="center-text title"><b>Les amis des animaux</b></h1><br>
 
     <!-- carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -38,9 +38,28 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div><br>
+</div><br><br>
 
-    <h3 class="center-text" style="font-size:30px"><u>Les amis des animaux</u> est une association qui vient en aide aux animaux<br> dont les propriétaires n'ont plus les moyens d'assurer leur bien-être,<br> qui sont laissés à l'abandon ou qui étaient maltraités.</h3>
+<h3 class="h3"><b>Les amis des animaux</b> est une association qui vient en aide aux animaux<br> dont les propriétaires n'ont plus les moyens d'assurer leur bien-être,
+    <br> qui sont laissés à l'abandon ou qui étaient maltraités.</h3><br><br><br><br>
+
+<div class="block1">
+  <div>
+    <img class="doggoclass1" src="IMG/chienaccueil1.jpg">
+  </div>
+  <div>
+  <p class="paragraphe">Martinus agens illas provincias pro praefectis aerumnas 
+    innocentium graviter gemens saepeque obsecrans, ut ab omni culpa inmunibus parceretur, cum non inpetraret, minabatur se discessurum: 
+    ut saltem id metuens perquisitor malivolus tandem desineret quieti coalitos homines in aperta pericula proiectare.<p>
+  </div>
+</div
+
+<div>
+<img class="doggoclass2" src="IMG/chienaccueil2.jpg">
+</div>
+
+
+
 
 </body>
 
