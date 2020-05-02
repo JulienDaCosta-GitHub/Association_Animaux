@@ -1,7 +1,7 @@
 <?php 
 //connexion bdd
 session_start();
-$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
+$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','root');
  
 //début de la session: verifier les données de mdp et nom
     if(isset($_POST['Login']))
@@ -22,7 +22,7 @@ $bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','r
         if($userexist == 1)
             {
                 $_SESSION['user']= $mail;
-                header("location:wellcome.php");
+                header("location:accueil.php");
                 exit;
             }
             else
@@ -37,8 +37,9 @@ $bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','r
 
 <?php 
 //connexion bdd
-session_start();
-$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
+/*session_start();
+$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','root');
+*/
  
 //début de la session: verifier les données de mdp et nom
     if(isset($_POST['Login']))
