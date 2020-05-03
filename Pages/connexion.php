@@ -28,7 +28,7 @@ $bdd= new PDO('mysql:host=localhost;port=3306;dbname=association_animaux;charser
             {
                 $_SESSION['user']= $mail;
                 header("location:accueil.php");
-                exit;
+                
             }
             else
             {

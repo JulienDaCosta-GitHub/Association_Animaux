@@ -50,7 +50,6 @@ if(isset($_POST['inscription'])){
     $insertsql->execute(array($nom, $prenom, $mdp, $adresse, $ville, $cp,$mail, $tel));
     $_SESSION['comptecree'] = "Votre compte a bien été créé !";
     header('Location:connexion.php');
-    exit;
 
    } else {
       $message = "code érronné";
