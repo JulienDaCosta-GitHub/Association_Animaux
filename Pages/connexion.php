@@ -5,7 +5,7 @@
   /*$con=mysqli_connect('localhost','root','root','association_animaux', '8889');*/
 
 session_start();
-$bdd= new PDO('mysql:host=localhost;port=3308;dbname=association_animaux;charsert=utf8','root','root');
+$bdd= new PDO('mysql:host=localhost;port=3306;dbname=association_animaux;charsert=utf8','root','');
 
 
 //début de la session: verifier les données de mdp et nom
