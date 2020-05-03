@@ -3,16 +3,29 @@
 
 <?php
 
+
 session_start();
 $bdd= new PDO('mysql:host=localhost;port=8889;dbname=association_animaux;charsert=utf8','root','root');
+
+if(isset($_POST['ajouter'])){
+    $_SESSION['form']['quantite']=$_POST['quantite'];
+    echo 'voila le resultat' . $_SESSION['form']['quantite']. '!';
+}
+$bdd= new PDO('mysql:host=localhost;port=8889;dbname=association_animaux;charsert=utf8','root', 'root');
+
 if(!$bdd)
 {
     die(' Please Check Your Connection'.mysqli_error($bdd));
 }
 
 
+
 $produits =  $bdd->query('SELECT * FROM produit');
 $lignecommande = $bdd->query('SELECT * FROM lignecommande');;
+
+$produits =  $bdd->query('SELECT nom, prix, stock FROM produit');
+if(isset($_SESSION))
+
 ?>
 
     <body>
@@ -26,12 +39,21 @@ $lignecommande = $bdd->query('SELECT * FROM lignecommande');;
             <div class="col-sm-12 col-md-10 col-md-offset-1">
                 <table class="table table-hover">
                     <thead>
+
                         <tr>
                             <th>Produit(s)</th>
                             <th>Quantity</th>
                             <th class="text-center">Prix</th>
                             <th class="center-text">Total</th>
                         </tr>
+
+                    <tr>
+                        <th>Produit(s)</th>
+                        <th>Quantite</th>
+                        <th class="text-center">Prix</th>
+                        <th class="center-text">Total</th>
+
+                    </tr>
                     </thead>
                     <tbody>
                     <tr>
@@ -50,6 +72,9 @@ $lignecommande = $bdd->query('SELECT * FROM lignecommande');;
                                     <td class="col-sm-1 col-md-1" style="text-align: center">
                                          <input type="email" class="form-control" id="exampleInputEmail1" value="<?php foreach ($produits as $produit) :echo $produit["stock"]; ?>">
 
+
+                                    <td class="col-sm-1 col-md-1 text-center">
+                                        <strong>'. $produit["stock"].'</strong>
                                     </td>
                                     <!-- recuperation du prix du produit -->
                                     <td class="col-sm-1 col-md-1 text-center">
