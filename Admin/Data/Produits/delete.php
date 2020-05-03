@@ -14,6 +14,6 @@ $result = $crud->delete($id, 'produit');
 
 if ($result) {
     //redirecting to the display page (index.php in our case)
-    header("Location:../../Views/index.php");
+    header("Location: ../../Views/index.php");
 }
 ?>
