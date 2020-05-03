@@ -1,4 +1,7 @@
+<?php
+require_once('header.php');
 
+?>
 <?php
 
 // including the database connection file
@@ -12,6 +15,7 @@ $crud = new Crud();
 $id = $crud->escape_string($_GET['id']);
 
 /*Récupérer les données de l'animal qui s'affichent dans le form */
+
 
 //selecting data associated with this particular id
 $result = $crud->getData("SELECT * FROM animal WHERE id=$id");
@@ -35,72 +39,87 @@ require_once('../Admin/Config/Validation.php');
 /*Déja appellé plus haut*/
 /*require_once('../Admin/Config/Crud.php');*/
 
-$crud = new Crud();
-$validation = new Validation();
-
-//fetching data de la table user pour récupérr l'ide user */
-$query = "SELECT ID FROM user ORDER BY id DESC";
-$result = $crud->getData($query);
-foreach ($result as $key => $re) {
-    $res['ID'] ;
-}
-var_dump($result);
 
 
-
-if(isset($_POST['confirmer'])) {
-
-    /*On récupère l'id de l'user */
-   $userID = $re['ID'];
-   var_dump($userID);
+/*__________Récupérer l'email de l'user_______________*/
 
 
-   /* On récupère l'id de l'animal
-    $animalID =implode(",",$id) ;
+if(isset($_SESSION['user']))
+{
+    $user = $_SESSION['user'];
+    var_dump($user);
 
-    var_dump($animalID);
-   */
-   $date = date("Y-m-d");
-   var_dump($date);
-
-
-    $id = $crud->escape_string($_GET['id']);
-    $dateRdv = $crud->escape_string($_POST['date_rdv']);
-    $msg = $validation->check_empty($_POST, array('date_rdv'));
-    var_dump($id);
-    var_dump($dateRdv);
-
-
-    // checking empty fields
-    if($msg != null) {
-        echo $msg;
-        //link to the previous page
-        echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
-    }
-    else {
-        // if all the fields are filled (not empty)
-
-        //insert data to database
-       // $result = $crud->execute("INSERT INTO reservation(user_ID,animal_ID,datetime,date_rdv) VALUES('$userID','$id','$date', '$dateRdv')");
+    //fetching data de la table user pour récupérr l'ide user */
+    $crud = new Crud();
+    $validation = new Validation();
+    $query = "SELECT ID FROM user where mail=$user";
+    $result = $crud->getData($query);
+        foreach ($result as $re) {
+            $re['ID'] ;
+        }
 
 
-        //display success message
-        echo '<div class="alert alert-primary" role="alert">
+
+
+
+
+/*Si On confirme le formulaire */
+
+    if(isset($_POST['confirmer'])) {
+
+        /*On récupère l'id de l'user */
+        $userID = $re['ID'];
+        var_dump($userID);
+
+
+        /* On récupère l'id de l'animal
+         $animalID =implode(",",$id) ;
+
+         var_dump($animalID);
+        */
+        $date = date("Y-m-d");
+          var_dump($date);
+
+
+        $id = $crud->escape_string($_GET['id']);
+        $dateRdv = $crud->escape_string($_POST['date_rdv']);
+        $msg = $validation->check_empty($_POST, array('date_rdv'));
+        var_dump($id);
+         var_dump($dateRdv);
+
+
+        // checking empty fields
+        if($msg != null) {
+            echo $msg;
+            //link to the previous page
+            echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
+        }
+        else {
+            // if all the fields are filled (not empty)
+
+            //insert data to database
+             $result = $crud->execute("INSERT INTO reservation(user_ID,animal_ID,datetime,date_rdv) VALUES('$userID','$id','$date', '$dateRdv')");
+
+
+            //display success message
+            echo '<div class="alert alert-primary" role="alert">
   A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
 </div>';
+        }
+
+
     }
 
-
 }
+
+
+
 ?>
 
 
+              <!--------------------------------------------------HTML------------------------------------------->
 
 
-    <?php
-    require_once('header.php');
-
-    ?>
 
 
 
@@ -154,6 +173,8 @@ if(isset($_POST['confirmer'])) {
 
         </div>
     </div>
+
+
     <!-- Card -->
 <div class="container">
 

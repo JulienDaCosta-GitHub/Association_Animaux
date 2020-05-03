@@ -15,6 +15,7 @@ $id = $crud->escape_string($_GET['id']);
 $result = $crud->getData("SELECT * FROM produit WHERE id=$id");
 
 foreach ($result as $res) {
+
     $nom = $res['nom'];
     $type_animal = $res['type_animal'];
     $prix = $res['prix'];
@@ -72,11 +73,43 @@ foreach ($result as $res) {
             <!-- Quotation -->
             <p>Un indispensable pour votre <?php echo $type_animal ?>!
             </p>
-            <?php echo "<a href=\"ficheanimal.php?id=$res[ID]\"><button class='btn btn-dark'>Ajouter au panier</button></a>"; ?>
+            <?php if( userConnect() ) : ?>
+            <?php echo "<a href='TransitionPanier.php?id=$res[ID]'><button class='btn btn-dark' id='remove'>Ajouter au panier</button></a>"; ?>
+            <?php endif; ?>
 
         </div>
 
     </div>
 </div>
+
+<!-- Card -->
+<!--div class="container">
+
+    <div class="alert alert-info invisible" role="alert" id="el">
+
+        <!-?php if( userConnect() ) : ?>
+
+
+
+        <!-?php else : ?>
+
+            <h4 class="alert-heading">Vous n'êtes pas connecté.e !</h4>
+            <p>Créez un compte ou connetez vous pour pouvoir réserver un rendz-vous </p>
+            <hr>
+            <p class="mb-0"><a class="alert-link" href="connexion.php">Se connecter</a> | <a class="alert-link" href="inscription.php">S'inscrire</a></p>
+
+        <!-?php endif; ?>
+    </div>
+</div -->
 </body>
+<script type="text/javascript">
+    remove.onclick = () => {
+        const el = document.querySelector('#el');
+        if (el.classList.contains("invisible")) {
+            el.classList.remove("invisible");
+
+
+        }
+    }
+</script>
 </html>
