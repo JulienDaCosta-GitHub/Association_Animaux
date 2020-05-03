@@ -67,7 +67,7 @@ if(isset($_POST['payer'])) {
         $result = $crud->execute("INSERT INTO lignecommande(commande_ID,produit_ID,quantite,montant) VALUES('$commande_id','$id_produit','$quantite', '$montant')");
 
         //display success message
-        header("Location: ../../Views/index.php");
+        header("Location: paiement.php");
     }
 }
 ?>
@@ -144,8 +144,11 @@ if(isset($_POST['payer'])) {
                     <td><a href="produits.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Reprendre l'achat</a></td>
                     <td></td>
                     <td></td>
-                   <?php echo "<td><a href='#' class='btn btn-success btn-block' name='payer'>Payer</i></a></td>" ; ?>
-                            <!-- paiement.php?id=$res[ID]-->
+                    <form class="form-group" action="" method="post">
+                    <?php echo "<td><button  class='btn btn-success btn-block' name='payer'>Payer</i></button></td>" ; ?>
+                        <!-- paiement.php?id=$res[ID]-->
+                    </form>
+
 
                     </tr>
 
