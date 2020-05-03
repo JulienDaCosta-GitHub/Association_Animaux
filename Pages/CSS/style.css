@@ -467,3 +467,15 @@ input {
   83% {background: #F44336;}
   100% {background: #F44336;}
 }
+
+/* ------carrousel card------ */
+#carouselExampleIndicators1 {
+  width: 300px;
+  height: 410px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+#indicator {
+  bottom: -80px;
+}

@@ -112,9 +112,9 @@ $result = $crud->getData($query);
 </div>
 
 <!--__________________________CAROUSSEL DES CARDS PRODUIT_________________________-->
-<div id="carouselExampleIndicators" class="carousel slide w-100" data-ride="carousel" data-interval="6000">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" data-interval="6000">
+  <ol class="carousel-indicators" id="indicator">
+    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
   <?php
 
     $query = "SELECT COUNT(id) AS maxp FROM produit";
@@ -123,7 +123,7 @@ $result = $crud->getData($query);
     
     while($i < $max[0]["maxp"]){
   ?>
-      <li data-target="#carouselExampleIndicators" data-slide-to="<?php $i ?>" class="active"></li>
+      <li data-target="#carouselExampleIndicators1" data-slide-to="<?php $i ?>" class="active"></li>
   <?php
     $i++;
     }
@@ -137,7 +137,7 @@ $result = $crud->getData($query);
         ?> 
           <div class="carousel-item active">
      <?php
-      echo '<div class="card">';
+      echo '<div class="card border border-success rounded">';
 
       /*Condition
 
@@ -164,13 +164,13 @@ $result = $crud->getData($query);
 
       echo '
      
-      <div class="card_container">
+      <div class="card_container w-100">
     
-        <h4 class="title_card"><b>' . $res["nom"] . '</b></h4>
-        <p>Type: ' . $res["type_animal"] . '</p>
-        <p>Prix: ' . $res["prix"] . '€</p>
-        <p>Stock: ' . $res["stock"] . ' unités</p>';
-      echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
+        <h4 class="title_card text-center"><b>' . $res["nom"] . '</b></h4>
+        <p class="text-center">Type: ' . $res["type_animal"] . '</p>
+        <p class="text-center">Prix: ' . $res["prix"] . '€</p>
+        <p class="text-center">Stock: ' . $res["stock"] . ' unités</p>';
+      echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-block btn-success'>Voir</button></a>";
       echo ' </div>
     </div>';
      
@@ -183,7 +183,7 @@ $result = $crud->getData($query);
    ?>
     <div class="carousel-item">
      <?php
-      echo '<div class="card">';
+      echo '<div class="card border border-success rounded">';
 
       /*Condition
 
@@ -210,13 +210,13 @@ $result = $crud->getData($query);
 
       echo '
      
-      <div class="card_container">
+      <div class="card_container w-100">
     
-        <h4 class="title_card"><b>' . $res["nom"] . '</b></h4>
-        <p>Type: ' . $res["type_animal"] . '</p>
-        <p>Prix: ' . $res["prix"] . '€</p>
-        <p>Stock: ' . $res["stock"] . ' unités</p>';
-      echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
+        <h4 class="title_card text-center"><b>' . $res["nom"] . '</b></h4>
+        <p class="text-center">Type: ' . $res["type_animal"] . '</p>
+        <p class="text-center">Prix: ' . $res["prix"] . '€</p>
+        <p class="text-center">Stock: ' . $res["stock"] . ' unités</p>';
+      echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-block btn-success'>Voir</button></a>";
       echo ' </div>
     </div>';
       echo "</div>";
