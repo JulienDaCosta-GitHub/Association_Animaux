@@ -1,4 +1,5 @@
 
+
 <?php include "header.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,7 @@
     
 </body>
 </html>
+
 
 <br>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -69,4 +71,8 @@
         </div>
         <div class='col-md-4'></div>
     </div>
+
 </div>
+
+</div>
+

@@ -3,8 +3,12 @@
 //connexion bdd
 
 
+
 $con = mysqli_connect('localhost', 'root', 'root');
 mysqli_select_db($con, 'association_animaux');
+
+
+  //$con=mysqli_connect('localhost','root','root','association_animaux', '8889');
 
 
   $con=mysqli_connect('localhost','root','root','association_animaux', '8889');
@@ -226,7 +230,7 @@ if(isset($_POST['Login']))
                     ?>
                     <div><?php echo $_GET['Invalid'] ?></div>
                     <?php
-upstream
+
                         }
             ?>
       

@@ -17,8 +17,35 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
+
+                </ul>
+
+
+            </div>
+
+            <div class="ml-auto"> <!-- boutons droite -->
+                <ul class="navbar-nav ">
+                    <li class="nav-item active">
+                        <a class="nav-link nav" href="deconnexion.php?logout">Déconnexion</a>
+                    </li>
+
+                    <li> <!-- logo panier cliquable -->
+                        <a class="nav-link active" href="panier.php"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+            <?php else : ?>
+
+
+        </div>
+
+        <div class="ml-auto"> <!-- boutons droite -->
+            <ul class="navbar-nav ">
+
                 <li class="nav-item active">
                     <a class="nav-link" href="accueil.php">Accueil<span class="sr-only">(current)</span></a>
                 </li>
