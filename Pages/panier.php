@@ -39,7 +39,7 @@ $total = $prix*$_SESSION['form']['quantite'] ;
 
 
 /*Insertion à la bdd si l'user paie le panier*/
-$crud = new Crud();
+
 $validation = new Validation();
 
 if(isset($_POST['payer'])) {
@@ -57,7 +57,7 @@ if(isset($_POST['payer'])) {
         echo $msg;
         //link to the previous page
         echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
-        header("Location: TransionPanier.php");
+
 
     }
     else {

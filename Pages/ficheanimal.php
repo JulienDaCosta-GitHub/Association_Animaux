@@ -22,6 +22,7 @@ $result = $crud->getData("SELECT * FROM animal WHERE id=$id");
 
 foreach ($result as $res) {
     $id =['ID'];
+    var_dump($id);
     $nom = $res['nom'];
     $type = $res['type'];
     $race = $res['race'];
@@ -52,11 +53,28 @@ if(isset($_SESSION['user']))
     //fetching data de la table user pour récupérr l'ide user */
     $crud = new Crud();
     $validation = new Validation();
-    $query = "SELECT ID FROM user where mail=$user";
+
+
+    $result = $crud->getData("SELECT ID FROM  user where mail=$user");
+    var_dump($result);
+    foreach ($result as $res) {
+
+        $nom = $res['nom'];
+        $type_animal = $res['type_animal'];
+        $prix = $res['prix'];
+        $stock = $res['stock'];
+        $filename = $res['image'];
+    }
+
+
+
+    var_dump($result);
+   /* $query = "SELECT ID FROM user where mail=$user";
     $result = $crud->getData($query);
         foreach ($result as $re) {
             $re['ID'] ;
         }
+   */
 
 
 
