@@ -26,6 +26,30 @@ $lignecommande = $bdd->query('SELECT * FROM lignecommande');;
 $produits =  $bdd->query('SELECT nom, prix, stock FROM produit');
 if(isset($_SESSION))
 
+    $commande_id = rand() ;
+    $quantite = $_SESSION['form']['quantite'] ;
+    $montant = $total ;
+    $id_produit = $crud->escape_string($_GET['id']);
+    $msg = $validation->check_empty($_GET, array('id'));
+
+
+    if($msg != null) {
+        echo $msg;
+        //link to the previous page
+        echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
+        header("Location: TransionPanier.php");
+
+    }
+    else {
+        // if all the fields are filled (not empty)
+
+        //insert data to database
+        $result = $crud->execute("INSERT INTO lignecommande(commande_ID,produit_ID,quantite,montant) VALUES('$commande_id','$id_produit','$quantite', '$montant')");
+
+        //display success message
+        header("Location: paiement.php");
+    }
+}
 ?>
 
     <body>
