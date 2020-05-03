@@ -44,18 +44,18 @@ foreach ($result as $res) {
             <?php
             if ($type_animal=='chien' || $type_animal =='Chien')
             {
-                echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/' . $filename . '" alt="Avatar"></div>';
+                echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/Produit/' . $filename . '" alt="Avatar"></div>';
 
             }
             elseif ($type_animal==='chat' || $type_animal==='Chat')
             {
 
-                echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/' . $filename . '" alt="Avatar"></div>';
+                echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/Produit/' . $filename . '" alt="Avatar"></div>';
 
             }
             else
             {
-                echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $filename . '" alt="Avatar"></div>';
+                echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Produit/' . $filename . '" alt="Avatar"></div>';
 
 
 

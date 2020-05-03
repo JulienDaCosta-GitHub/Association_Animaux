@@ -45,9 +45,19 @@ $validation = new Validation();
 if(isset($_POST['payer'])) {
 
     $commande_id = rand() ;
-    $quantite = $_SESSION['form']['quantite'] ;
-    $montant = $total ;
-    $id_produit = $crud->escape_string($_GET['id']);
+
+
+    $idproduit = $crud->escape_string($_GET['id']);
+    $id_produit = intval($idproduit);
+
+
+    $q = $_SESSION['form']['quantite'] ;
+    $quantite = intval($q);
+
+
+    $m = $total ;
+    $montant = intval($m);
+
 
     $msg = $validation->check_empty($_GET, array('id'));
 
@@ -64,10 +74,15 @@ if(isset($_POST['payer'])) {
         // if all the fields are filled (not empty)
 
         //insert data to database
-        $result = $crud->execute("INSERT INTO lignecommande(commande_ID,produit_ID,quantite,montant) VALUES('$commande_id','$id_produit','$quantite', '$montant')");
+       $result = $crud->execute("INSERT INTO lignecommande(commande_ID,produit_ID,quantite,montant) VALUES('$commande_id','$id_produit','$quantite','$montant')");
 
         //display success message
-        header("Location: paiement.php");
+
+        header("Location: paiement.php?id=$res[ID]");
+
+
+
+
     }
 }
 ?>
@@ -145,10 +160,10 @@ if(isset($_POST['payer'])) {
                     <td></td>
                     <td></td>
                     <form class="form-group" action="" method="post">
-                    <?php echo "<td><button  class='btn btn-success btn-block' name='payer'>Payer</i></button></td>" ; ?>
                         <!-- paiement.php?id=$res[ID]-->
-                    </form>
+                        <?php echo "<td><a href='paiement.php?id=$res[ID]'><button class='btn btn-success ' name='payer'>Payer</button></a></td>" ?>
 
+                    </form>
 
                     </tr>
 

@@ -1,5 +1,34 @@
 
+<?php
+require_once('header.php');
 
+require_once('../Admin/Config/Crud.php');
+
+$crud = new Crud();
+
+$id = $crud->escape_string($_GET['id']);
+
+$result = $crud->getData("SELECT * FROM produit WHERE id=$id");
+
+foreach ($result as $res) {
+
+    $nom = $res['nom'];
+    $type_animal = $res['type_animal'];
+    $prix = $res['prix'];
+    $stock = $res['stock'];
+    $filename = $res['image'];
+}
+
+
+
+$total = $prix*$_SESSION['form']['quantite'] ;
+
+if(isset($_POST['payer'])) {
+    header("Location: remerciement.php?");
+
+}
+
+?>
 
 
 
@@ -10,7 +39,7 @@
 <!------ Include the above in your HEAD tag ---------->
 <body></body>
 <div class="container" align="center">
-    <h2>Total :<strong>€</strong></h2>
+    <h2>Total :<strong><?php echo $total?>€</strong></h2>
     <div class='row'>
         <div class='col-md-4'></div>
         <div class='col-md-4'>
@@ -62,7 +91,7 @@
 
                 <div class='form-row'>
                     <div class='col-md-12 form-group'>
-                        <button class="btn btn-success btn-block"  type="submit" name="payer">Payer</a>
+                        <a href="remerciement.php"><button class="btn btn-success btn-block"  type="submit" name="payer">Payer</button></a>
                     </div>
                 </div>
                 <div class='form-row'>

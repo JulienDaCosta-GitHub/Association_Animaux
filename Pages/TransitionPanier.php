@@ -26,10 +26,42 @@ if(isset($_POST['ajouter']))
 
 }
 ?>
+<div class="d-flex">
 
-<form action="" method="post" name="form">
-    <input type="text" name="quantite"/>
-    <button class="btn btn-dark" name="ajouter">Confirmer</button>
-</form>
+    <div class="w-50 ">
+        <?php
+        if ($type_animal=='chien' || $type_animal =='Chien')
+        {
+            echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/Produit/' . $filename . '" alt="Avatar"></div>';
 
-<?php echo "<a href='panier.php?id=$res[ID]'><button class='btn btn-dark' id='remove'>Voir Panier</button></a>"; ?>
+        }
+        elseif ($type_animal==='chat' || $type_animal==='Chat')
+        {
+
+            echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/Produit/' . $filename . '" alt="Avatar"></div>';
+
+        }
+        else
+        {
+            echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Produit/' . $filename . '" alt="Avatar"></div>';
+
+
+
+        }
+        ?>
+
+    </div>
+
+    <div class="w-25">
+        <form class="text-center border border-light p-5" action="" method="post" name="form">
+            <input class="form-control mb-4" placeholder="Choisissez la quantité" type="text" name="quantite"/>
+            <button class="btn btn-dark" name="ajouter">Confirmer</button>
+        </form>
+    </div>
+    <?php echo "<a href='panier.php?id=$res[ID]'><button class='btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect' style='margin-top: 40vh' id='remove'>Voir Panier</button></a>"; ?>
+
+</div>
+
+
+
+
