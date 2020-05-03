@@ -104,6 +104,10 @@ body {
   padding: 10px;
 }
 
+.carousel-inner {
+  border-radius: 30px;;
+}
+
 .cadre {
   height: 150px;
   width: auto;
