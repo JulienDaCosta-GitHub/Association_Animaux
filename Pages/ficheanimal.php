@@ -19,6 +19,9 @@ $id = $crud->escape_string($_GET['id']);
 
 //selecting data associated with this particular id
 $result = $crud->getData("SELECT * FROM animal WHERE id=$id");
+$r = boolval($result);
+var_dump($r);
+
 
 foreach ($result as $res) {
     $id =['ID'];
