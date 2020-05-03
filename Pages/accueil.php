@@ -25,6 +25,8 @@ $crud = new Crud();
 //fetching data in descending order (lastest entry first)
 $query = "SELECT * FROM produit ORDER BY id DESC";
 $result = $crud->getData($query);
+
+
 //echo '<pre>'; print_r($result); exit;
 
 ?>
@@ -110,10 +112,31 @@ $result = $crud->getData($query);
 </div>
 
 <!--__________________________CAROUSSEL DES CARDS PRODUIT_________________________-->
-<div class="all_cards">
+<div id="carouselExampleIndicators" class="carousel slide w-100" data-ride="carousel" data-interval="6000">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+  <?php
 
-<?php
-  foreach  ($result as $key => $res) {
+    $query = "SELECT COUNT(id) AS maxp FROM produit";
+    $max = $crud->getData($query);
+    $i = 1;
+    
+    while($i < $max[0]["maxp"]){
+  ?>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<?php $i ?>" class="active"></li>
+  <?php
+    $i++;
+    }
+  ?>
+  </ol>
+  <div class="carousel-inner">
+   <?php
+    $i=0;
+    foreach  ($result as $key => $res) {
+      if ($i==0) {
+        ?> 
+          <div class="carousel-item active">
+     <?php
       echo '<div class="card">';
 
       /*Condition
@@ -150,10 +173,59 @@ $result = $crud->getData($query);
       echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
       echo ' </div>
     </div>';
-  }
-      ?>
+     
+    ?>
+    
+  </div>
+        <?php
+      }
 
-</div>
+   ?>
+    <div class="carousel-item">
+     <?php
+      echo '<div class="card">';
+
+      /*Condition
+
+       Si l'animal est de type chien alors récupérer l'image dans le dossier corespondant miniature/Chien
+       Si l'animal est de ty pe chat alors récupérer l'imafe dans le dossier correspondant miniature/Chat
+
+       */
+
+      if ($res['type_animal']=='chien' || $res['type_animal'] =='Chien')
+      {
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chien/Produit/' . $res["image"] . '" alt="Avatar"></div>';
+      }
+      elseif ($res['type_animal']==='chat' || $res['type_animal']==='Chat')
+      {
+
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/Chat/Produit/' . $res["image"] . '" alt="Avatar"></div>';
+
+      }
+      else
+      {
+          echo ' <div class="cadre"><img class="img_card" src="../Admin/miniature/' . $res["image"] . '" alt="Avatar"></div>';
+
+      }
+
+      echo '
+     
+      <div class="card_container">
+    
+        <h4 class="title_card"><b>' . $res["nom"] . '</b></h4>
+        <p>Type: ' . $res["type_animal"] . '</p>
+        <p>Prix: ' . $res["prix"] . '€</p>
+        <p>Stock: ' . $res["stock"] . ' unités</p>';
+      echo "<a href=\"ficheproduit.php?id=$res[ID]\"><button class='btn btn-dark'>voir</button></a>";
+      echo ' </div>
+    </div>';
+      echo "</div>";
+    $i++;  
+    }
+    ?>
+    
+  </div>
+</div><br><br>
 
 
 <!--don-_____________________________________________________-->
@@ -200,10 +272,7 @@ $result = $crud->getData($query);
     <?php endif; ?>
 
 
-<script src="JS/SCRIPT.js"></script>
-</body>
-</div>
-
+<script src="JS/SCRIPT.js"></script><br><br>
 </body>
 
 <?php include "footer.php"; ?>
