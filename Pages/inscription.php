@@ -3,9 +3,9 @@
 //connexion bdd
 try{
 
-   // $bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','root');
+    //$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','root');
 
-    $bdd= new PDO('mysql:host=localhost;port=3308;dbname=association_animaux;charsert=utf8','root','');
+    $bdd= new PDO('mysql:host=localhost;port=3306;dbname=association_animaux;charsert=utf8','root','');
 
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
