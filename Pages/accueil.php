@@ -1,14 +1,54 @@
 
 
 <?php
-/*$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
+$bdd= new PDO('mysql:host=localhost;dbname=association_animaux;charsert=utf8','root','');
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
      
 if (isset ($_POST['don'])){
-   $sth = $bdd->prepare("INSERT INTO don (montant) VALUES(?)");
+   $sth = $bdd->prepare("INSERT INTO dons (montant) VALUES(?)");
    $sth->execute(array($_POST['montant']));
-}*/
+}
+
+?>
+<?php
+/*
+<?php
+$MySQL_Host="localhost";
+$MySQL_User="root";
+$MySQL_Passw="";
+$db="association_animaux";
+$Asso=mysqli_connect("$MySQL_Host:3306","$MySQL_User","$MySQL_Passw") or die ("Erreur de connexion au serveur");
+?>
+
+<?php
+mysqli_select_db("$db",$Asso) or die ("failed to connect data base");
+
+mysql_query("SET NAMES UTF8");
+
+$result = mysqli_query("SELECT ID FROM user WHERE mail='".$user."' "); 
+ while ( $row = mysqli_fetch_array($result)){
+	$iduser=$row['ID'];
+}
+?>
+
+<?php
+$montant=$_POST["montant"];
+
+mysqli_select_db("$db",$Asso) or die ("failed to connect data base");
+
+mysqli_query("SET NAMES UTF8");
+
+$sql = "INSERT INTO dons(ID,user_ID,montant) VALUES('','$iduser','$montant')"; 
+
+mysqli_query($sql) or die('Erreur SQL !'.$sql.'<br>'.mysql_error()); 
+
+$IDdons  = mysqli_insert_id();
+
+?>
+
+
+*/
 
 ?>
 
@@ -110,6 +150,9 @@ $result = $crud->getData($query);
     <img id="doggo2" src="IMG/chienaccueil2.jpg">
   </div>
 </div>
+
+<br>
+<br>
 
 <!--__________________________CAROUSSEL DES CARDS PRODUIT_________________________-->
 <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" data-interval="6000">
