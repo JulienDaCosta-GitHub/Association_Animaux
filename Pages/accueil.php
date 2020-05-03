@@ -151,6 +151,9 @@ $result = $crud->getData($query);
   </div>
 </div>
 
+<br>
+<br>
+
 <!--__________________________CAROUSSEL DES CARDS PRODUIT_________________________-->
 <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" data-interval="6000">
   <ol class="carousel-indicators" id="indicator">
