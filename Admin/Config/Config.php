@@ -4,7 +4,7 @@ class Config
     private $_host = 'localhost';
     private $_username = 'root';
     private $_password = 'root';
-    private $_database = 'animalerie';
+    private $_database = 'association_animaux';
 
     protected $connection;
 
