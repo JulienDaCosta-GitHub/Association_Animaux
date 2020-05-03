@@ -8,11 +8,10 @@ require_once('../Admin/Config/Crud.php');
 $crud = new Crud();
 
 
-/*Récupérer les données de l'animal qui s'affichent dans le form */
-
 //getting id from url
 $id = $crud->escape_string($_GET['id']);
 
+/*Récupérer les données de l'animal qui s'affichent dans le form */
 
 //selecting data associated with this particular id
 $result = $crud->getData("SELECT * FROM animal WHERE id=$id");
@@ -97,21 +96,13 @@ if(isset($_POST['confirmer'])) {
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<header>
+
     <?php
     require_once('header.php');
 
     ?>
 
-</header>
+
 
 
     <div class="container">
@@ -187,7 +178,7 @@ if(isset($_POST['confirmer'])) {
         <?php endif; ?>
     </div>
 </div>
-</body>
+
 <script type="text/javascript">
     remove.onclick = () => {
         const el = document.querySelector('#el');
@@ -198,4 +189,4 @@ if(isset($_POST['confirmer'])) {
         }
     }
 </script>
-</html>
+<?php require_once('footer.php')?>

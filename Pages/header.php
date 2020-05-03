@@ -13,6 +13,7 @@ require_once('../Admin/Config/init.php');?>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Les Amis Des Animaux</title>
   </head>
+  <body>
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
