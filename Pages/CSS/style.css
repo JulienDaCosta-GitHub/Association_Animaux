@@ -18,8 +18,16 @@ body {
 }
 
 .carousel-inner img {
-  max-height: 650px;
-  min-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+.row {
+  justify-content: center;
+}
+
+.offset-3 {
+  margin-left: 0 !important;
 }
 
 .center {
@@ -44,43 +52,34 @@ body {
 }
 
 .blockContent {
-  margin-top: 150px;
-  margin-bottom: 7%;
+  margin: 150px 0px auto !important;
 
 }
 
 #doggo1 {
   border-radius: 8px;
-  margin-left: 52%;
-  
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
   
 }
 
 #paragraphe1 {
   font: italic 1.2em "Fira Sans", serif;
   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  width: 55%;
   text-align: center;
-  margin-left: 45%;
   
 }
 
 #paragraphe2 {
   font: italic 1.2em "Fira Sans", serif;
   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  width: 55%;
   text-align: center;
-  margin-left: 33%;
 }
 
 #doggo2 {
   border-radius: 8px;
-  margin-left: 18%;
-    max-width: 100%;
-    height: auto;
-  
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -332,8 +331,8 @@ input {
 #animetexte {
   margin-top: 50px;
   margin-bottom: 50px;
-  margin-right: 30%;
-  margin-left: 38%;
+  margin-right: 25%;
+  margin-left: 25%;
   text-align:center;
   font: italic 1.2em "Fira Sans", serif;
   font-size: 2.5em;
@@ -341,14 +340,14 @@ input {
   padding-bottom: 10px;
   overflow:hidden;
   animation:bg 5s linear infinite;
-  
+  border-radius: 30px;
 }
 
 .dropping-texts {
   display: inline-block;
   width: 180px;
   text-align: left;
-  height: 36px;
+  height: 39px;
   vertical-align: -2px;
 }
 
