@@ -106,7 +106,13 @@ if(isset($_SESSION))
                     <td><a href="produits.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Reprendre l'achat</a></td>
                     <td></td>
                     <td></td>
+
                     <td><a href="paiement.php" class="btn btn-success btn-block">Payer</i></a></td>
+
+                   <?php echo "<td><a href='paiement.php?id=$res[ID]' class='btn btn-success btn-block' name='payer'>Payer</i></a></td>" ; ?>
+                            <!-- paiement.php?id=$res[ID]-->
+
+
                     </tr>
 
                     </td>
